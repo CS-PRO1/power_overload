@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:power_overload/View/Main%20Pages/lessons_screen.dart';
 import 'package:power_overload/components.dart';
 import 'package:power_overload/constants.dart';
 
@@ -42,30 +43,39 @@ class SubjectsScreen extends StatelessWidget {
   }
 
   Widget flowershape(BuildContext context, int index) {
-    return Stack(
-      children: [
-        Container(
-          color: green400,
-          width: 200,
-          height: 200,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20))),
-        ),
-        RotatedBox(
-          quarterTurns: 1,
-          child: Container(
-            color: green400,
-            width: 200,
-            height: 200,
+    return InkWell(
+      child: Stack(
+        children: [
+          Container(
+            width: 100,
+            height: 100,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20))),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              color: green400,
+            ),
           ),
-        ),
-        Text(
-          page_info[index],
-          style: TextStyle(color: green100),
-        ),
-      ],
+          RotatedBox(
+            quarterTurns: 1,
+            child: Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: green400,
+              ),
+            ),
+          ),
+          Text(
+            page_info[index],
+            style: TextStyle(color: green100),
+          ),
+        ],
+      ),
+      onTap: () {
+        //TODO Login Request Function
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => LessonsScreen()));
+      },
     );
   }
 }
