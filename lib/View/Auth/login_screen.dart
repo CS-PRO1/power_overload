@@ -71,7 +71,9 @@ class LoginScreen extends StatelessWidget {
                                             return null;
                                           },
                                         ),
-                                        SizedBox(height: 10,),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
                                         myTextField(
                                           fathernamecontroller,
                                           context,
@@ -107,11 +109,11 @@ class LoginScreen extends StatelessWidget {
                                         myTextField(
                                           passwordcontroller,
                                           context,
-                                          'Password',
+                                          'كلمة السر',
                                           obscureText: cubit.ispasswordshown,
                                           validator: (value) {
                                             if (value!.isEmpty) {
-                                              return 'Please Enter your password';
+                                              return 'الرجاء إدخال كلمة السر';
                                             }
                                             return null;
                                           },
@@ -128,7 +130,7 @@ class LoginScreen extends StatelessWidget {
                                           height: 30,
                                         ),
                                         defaultButton(
-                                          text: 'Login',
+                                          text: 'تسجيل الدخول',
                                           textsize: 16,
                                           function: () {
                                             //TODO Login Request Function
@@ -178,7 +180,7 @@ class LoginScreen extends StatelessWidget {
                                   )),
                             ),
                             Text(
-                              'Login',
+                              'تسجيل الدخول',
                               style: TextStyle(
                                   fontSize: 50,
                                   shadows: [
