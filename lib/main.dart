@@ -15,16 +15,12 @@ void main() async {
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return 
-      
-      MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.green),
-        debugShowCheckedModeBanner: false,
-        home: LoginScreen(),
-      );
-    
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.green),
+      debugShowCheckedModeBanner: false,
+      home: LoginScreen(),
+    );
   }
 }
