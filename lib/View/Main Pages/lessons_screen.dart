@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:power_overload/View/Main%20Pages/lesson_details_screen.dart';
 import 'package:power_overload/components.dart';
 
 class LessonsScreen extends StatelessWidget {
@@ -35,7 +36,10 @@ class LessonsScreen extends StatelessWidget {
 
 catItemBuilder(context, index) {
   return InkWell(
-    onTap: () {}, //=> Get.toNamed('/orderdetails'),
+    onTap: () {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => LessonDetailsScreen()));
+    }, //=> Get.toNamed('/orderdetails'),
     child: Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
@@ -55,8 +59,7 @@ catItemBuilder(context, index) {
               ),
             ),
             Text(
-              '2024/12/9',
-              textAlign: TextAlign.center,
+              '2024/12/9',textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w100,
                   fontSize: 10,
@@ -66,5 +69,6 @@ catItemBuilder(context, index) {
         ),
       ),
     ),
+    
   );
 }

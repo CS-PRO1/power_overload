@@ -1,0 +1,130 @@
+import 'package:flutter/material.dart';
+import 'package:power_overload/components.dart';
+
+class LessonDetailsScreen extends StatelessWidget {
+  const LessonDetailsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:
+          MyAppBar(title: 'الحصة الاولى', leading: AppBarPopupMenu(), actions: [
+        IconButton(
+          icon: Icon(Icons.file_open),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: Icon(Icons.star),
+          onPressed: () {},
+        ),
+      ]),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'عنوان الحصة',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              DropdownMenu(
+                dropdownMenuEntries: <DropdownMenuEntry<String>>[
+                  DropdownMenuEntry(value: 'BL1', label: 'BL1'),
+                ],
+                // menuStyle: MenuStyle(shape: Radius),
+                menuHeight: 260,
+                width: double.infinity,
+                label: Text(
+                  'افكار الحصة',
+                  style: TextStyle(fontSize: 15),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Stack(
+                  children: [
+                    ListView.separated(
+                        physics: BouncingScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) =>
+                            catItemBuilder(context, index),
+                        itemCount: 40,
+                        separatorBuilder: (BuildContext context, int index) =>
+                            Container(
+                              height: 1,
+                              color: Colors.grey,
+                            )),
+                    Positioned(
+                      bottom: 20,
+                      right: 20.0,
+                      // or whatever
+                      child: MyFloatButton(
+                        onTap: () {
+                          //Get.toNamed('/addorder');
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+catItemBuilder(context, index) {
+  return InkWell(
+    onTap: () {}, //=> Get.toNamed('/orderdetails'),
+    child: Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '2024/12/9',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w100,
+                      fontSize: 10,
+                      color: Colors.grey[600]),
+                ),
+                Flexible(
+                  child: Text(
+                    'اسم الطالب',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Flexible(
+                  child: Text(
+                    ' محتوى التعليق .....................',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
