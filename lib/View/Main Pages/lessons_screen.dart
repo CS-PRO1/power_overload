@@ -26,15 +26,6 @@ class LessonsScreen extends StatelessWidget {
                       height: 1,
                       color: Colors.grey,
                     )),
-            Positioned(
-              bottom: 60,
-              right: 20.0, // or whatever
-              child: MyFloatButton(
-                onTap: () {
-                  // Get.toNamed('/addorder');
-                },
-              ),
-            )
           ],
         ),
       ),
@@ -52,14 +43,19 @@ catItemBuilder(context, index) {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Icon(Icons.arrow_back_ios_rounded),
+
+
+
+
+            
             Flexible(
               child: Text(
-                'Patient Name',
+                'الحصة الاولى',
                 overflow: TextOverflow.ellipsis,
               ),
             ),
             Text('2024/12/9'),
-            Icon(Icons.arrow_forward_ios_rounded),
           ],
         ),
       ),
