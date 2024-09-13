@@ -11,13 +11,15 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = LandingPageCubit().get(context);
 
     return BlocProvider(
         create: (context) => LandingPageCubit(),
         child: BlocConsumer<LandingPageCubit, AppStates>(
             listener: (context, state) {},
-            builder: (context, state) => Scaffold(
+            builder: (context, state) { 
+                  var cubit = LandingPageCubit().get(context);
+
+              return Scaffold(
                   body: cubit.screens[cubit.index],
                   bottomNavigationBar: BottomNavigationBar(
                     currentIndex: cubit.index,
@@ -45,6 +47,6 @@ class LandingScreen extends StatelessWidget {
                     iconSize: 22,
                     landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
                   ),
-                )));
+                );}));
   }
 }
