@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:power_overload/constants.dart';
@@ -136,21 +137,71 @@ Widget AppBarPopupMenu() {
   return PopupMenuButton(
       icon: const Icon(Icons.menu),
       itemBuilder: (context) => [
-            PopupMenuItem(
+         PopupMenuItem(
                 child: Row(
                   children: [
                     Icon(
-                      Icons.settings,
-                      color: cyan500,
+                      CupertinoIcons.chat_bubble_2,
+                      color: green400,
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Container(
                       child: Text(
-                        'Settings',
+                        'دردشة',
                         style: TextStyle(
-                          color: cyan600,
+                          color: green500,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 19,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                onTap: () {
+                  //TODO
+                }),
+                 PopupMenuItem(
+                child: Row(
+                  children: [
+                    Icon(
+                      CupertinoIcons.question_circle,
+                      color: green400,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      child: Text(
+                        'الشكاوى',
+                        style: TextStyle(
+                          color: green500,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 19,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                onTap: () {
+                  //TODO
+                }),
+            PopupMenuItem(
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.settings,
+                      color: green400,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      child: Text(
+                        'الاعدادات',
+                        style: TextStyle(
+                          color: green500,
                           fontWeight: FontWeight.bold,
                           fontSize: 19,
                         ),
@@ -166,16 +217,16 @@ Widget AppBarPopupMenu() {
                   children: [
                     Icon(
                       Icons.info_outline_rounded,
-                      color: cyan500,
+                      color: green400,
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Container(
                       child: Text(
-                        'About',
+                        'حول',
                         style: TextStyle(
-                          color: cyan600,
+                          color: green500,
                           fontWeight: FontWeight.bold,
                           fontSize: 19,
                         ),
