@@ -43,19 +43,24 @@ catItemBuilder(context, index) {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(Icons.arrow_back_ios_rounded),
-
-
-
-
-            
+            Icon(
+              Icons.arrow_back_ios_rounded,
+              color: Colors.grey,
+            ),
             Flexible(
               child: Text(
                 'الحصة الاولى',
                 overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
               ),
             ),
-            Text('2024/12/9'),
+            Text(
+              '2024/12/9',
+              style: TextStyle(
+                  fontWeight: FontWeight.w100,
+                  fontSize: 10,
+                  color: Colors.grey),
+            ),
           ],
         ),
       ),
