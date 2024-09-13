@@ -51,7 +51,7 @@ class SubjectsScreen extends StatelessWidget {
     return InkWell(
       splashColor: Colors.transparent,
       child: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: const EdgeInsets.all(30.0),
         child: Stack(
           children: [
             Container(
