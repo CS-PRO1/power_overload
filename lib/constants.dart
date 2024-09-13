@@ -21,11 +21,11 @@ BorderRadius StandardBorderRadius = BorderRadius.circular(30.0);
 BorderRadius ActiveBorderRadius = BorderRadius.circular(10.0);
 
 //Cyan Primaries
-const Color cyan100 = Color.fromARGB(255, 179, 240, 232);
-const Color cyan_navbar_600 = Color.fromARGB(150, 11, 71, 65);
-const Color cyan_navbar_300 = Color.fromARGB(150, 48, 195, 177);
-const Color cyan200 = Color.fromARGB(255, 143, 229, 220);
-const Color cyan300 = Color.fromARGB(255, 48, 195, 177);
-const Color cyan400 = Color.fromARGB(255, 41, 157, 144);
-const Color cyan500 = Color.fromARGB(255, 18, 124, 114);
-const Color cyan600 = Color(0xFF0B4741);
+// const Color cyan100 = Color.fromARGB(255, 179, 240, 232);
+// const Color cyan_navbar_600 = Color.fromARGB(150, 11, 71, 65);
+// const Color cyan_navbar_300 = Color.fromARGB(150, 48, 195, 177);
+// const Color cyan200 = Color.fromARGB(255, 143, 229, 220);
+// const Color cyan300 = Color.fromARGB(255, 48, 195, 177);
+// const Color cyan400 = Color.fromARGB(255, 41, 157, 144);
+// const Color cyan500 = Color.fromARGB(255, 18, 124, 114);
+// const Color cyan600 = Color(0xFF0B4741);
