@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [cyan600, cyan100, cyan500],
+                    colors: [green400, green100, green500],
                   ),
                 ),
                 child: Column(
@@ -71,6 +71,7 @@ class LoginScreen extends StatelessWidget {
                                             return null;
                                           },
                                         ),
+                                        SizedBox(height: 10,),
                                         myTextField(
                                           fathernamecontroller,
                                           context,
@@ -84,6 +85,9 @@ class LoginScreen extends StatelessWidget {
                                             return null;
                                           },
                                         ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
                                         myTextField(
                                           lastnamecontroller,
                                           context,
@@ -96,6 +100,9 @@ class LoginScreen extends StatelessWidget {
                                             }
                                             return null;
                                           },
+                                        ),
+                                        SizedBox(
+                                          height: 10,
                                         ),
                                         myTextField(
                                           passwordcontroller,

@@ -16,7 +16,7 @@ Widget defaultButton({
       gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: <Color>[cyan500, cyan400, cyan300]),
+          colors: <Color>[green400, green300, green100]),
     ),
     width: width,
     height: heigh,
@@ -123,7 +123,7 @@ AppBar MyAppBar(
         gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: <Color>[cyan400, cyan100]),
+            colors: <Color>[green400, green100]),
       ),
     ),
     scrolledUnderElevation: 0,
@@ -137,7 +137,7 @@ Widget AppBarPopupMenu() {
   return PopupMenuButton(
       icon: const Icon(Icons.menu),
       itemBuilder: (context) => [
-         PopupMenuItem(
+            PopupMenuItem(
                 child: Row(
                   children: [
                     Icon(
@@ -162,7 +162,7 @@ Widget AppBarPopupMenu() {
                 onTap: () {
                   //TODO
                 }),
-                 PopupMenuItem(
+            PopupMenuItem(
                 child: Row(
                   children: [
                     Icon(
@@ -250,11 +250,11 @@ Widget MyFloatButton({VoidCallback? onTap}) {
         height: 52.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: cyan200,
+          color: green200,
         ),
         child: Icon(
           Icons.add,
-          color: cyan500,
+          color: green400,
           size: 25.0,
         ),
       ),
@@ -268,7 +268,7 @@ toast(String msg) {
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
-      backgroundColor: cyan400,
+      backgroundColor: green400,
       textColor: Colors.white,
       fontSize: 16.0);
 }
