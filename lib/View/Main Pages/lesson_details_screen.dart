@@ -22,73 +22,71 @@ class LessonDetailsScreen extends StatelessWidget {
           onPressed: () {},
         ),
       ]),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'عنوان الحصة',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: ExpandablePanel(
-                  header: Text('افكار الحصة',
-                    textDirection: TextDirection.rtl,
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
                   ),
-                  collapsed: Text(
-                    ' رؤية المزيد',
-                    
-                    softWrap: true,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                  Text(
+                    'عنوان الحصة',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.center,
                   ),
-                  expanded: Container(
-                    width: double.infinity,
-                    child: Column(
-                      children: [
-                        Text(
-                          '   لاالااات بلا تتنا  بلا تالا اريد بلا بلا بلا',
-                          softWrap: true,
-                          // textAlign: TextAlign.center,
-                          textDirection: TextDirection.ltr,
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: ExpandablePanel(
+                      header: Text(
+                        'افكار الحصة',
+                        textDirection: TextDirection.rtl,
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      collapsed: SizedBox(
+                        height: 0,
+                      ),
+                      expanded: Container(
+                        width: double.infinity,
+                        child: Column(
+                          children: [
+                            Text(
+                              '   لاالااات بلا تتنا  بلا تالا اريد بلا بلا بلا',
+                              softWrap: true,
+                              // textAlign: TextAlign.center,
+                              //textDirection: TextDirection.ltr,
+                            ),
+                            Text(
+                              '  بلا بلا بلا بلا بلا بلا',
+                              softWrap: true,
+                            ),
+                            Text(
+                              '  بلا بلا بلا بلا بلا بلا',
+                              softWrap: true,
+                            ),
+                            Text(
+                              ' بلا بلا بلا بلا بلا بلا',
+                              softWrap: true,
+                            ),
+                            Text(
+                              ' بلا بلا بلا بلا بلا بلا',
+                              softWrap: true,
+                            ),
+                          ],
                         ),
-                        Text(
-                          '  بلا بلا بلا بلا بلا بلا',
-                          softWrap: true,
-                        ),
-                        Text(
-                          '  بلا بلا بلا بلا بلا بلا',
-                          softWrap: true,
-                        ),
-                        Text(
-                          ' بلا بلا بلا بلا بلا بلا',
-                          softWrap: true,
-                        ),
-                        Text(
-                          ' بلا بلا بلا بلا بلا بلا',
-                          softWrap: true,
-                        ),
-                      ],
+                      ),
+                      // tapHeaderToExpand: true,
+                      // hasIcon: true,
                     ),
                   ),
-                  // tapHeaderToExpand: true,
-                  // hasIcon: true,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: Stack(
-                  children: [
-                    ListView.separated(
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: ListView.separated(
                         physics: BouncingScrollPhysics(),
                         shrinkWrap: true,
                         itemBuilder: (BuildContext context, int index) =>
@@ -99,20 +97,19 @@ class LessonDetailsScreen extends StatelessWidget {
                               height: 1,
                               color: Colors.grey,
                             )),
-                    Positioned.directional(
-                      textDirection: TextDirection.ltr,
-                      bottom: 20,
-                      end: 20,
-                      child: MyFloatButton(
-                        onTap: () {},
-                      ),
-                    )
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: MyFloatButton(
+              onTap: () {},
+            ),
+          )
+        ],
       ),
     );
   }
