@@ -41,38 +41,44 @@ class LessonDetailsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: ExpandablePanel(
-                  header: Text('افكار الحصة'),
+                  header: Text('افكار الحصة',
+                    textDirection: TextDirection.rtl,
+                  ),
                   collapsed: Text(
                     ' رؤية المزيد',
+                    
                     softWrap: true,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  expanded: Column(
-                    children: [
-                      Text(
-                        '   لاالااات بلا تتنا  بلا تالا اريد بلا بلا بلا',
-                        softWrap: true,
-                        // textAlign: TextAlign.center,
-                        textDirection: TextDirection.rtl,
-                      ),
-                      Text(
-                        '  بلا بلا بلا بلا بلا بلا',
-                        softWrap: true,
-                      ),
-                      Text(
-                        '  بلا بلا بلا بلا بلا بلا',
-                        softWrap: true,
-                      ),
-                      Text(
-                        ' بلا بلا بلا بلا بلا بلا',
-                        softWrap: true,
-                      ),
-                      Text(
-                        ' بلا بلا بلا بلا بلا بلا',
-                        softWrap: true,
-                      ),
-                    ],
+                  expanded: Container(
+                    width: double.infinity,
+                    child: Column(
+                      children: [
+                        Text(
+                          '   لاالااات بلا تتنا  بلا تالا اريد بلا بلا بلا',
+                          softWrap: true,
+                          // textAlign: TextAlign.center,
+                          textDirection: TextDirection.ltr,
+                        ),
+                        Text(
+                          '  بلا بلا بلا بلا بلا بلا',
+                          softWrap: true,
+                        ),
+                        Text(
+                          '  بلا بلا بلا بلا بلا بلا',
+                          softWrap: true,
+                        ),
+                        Text(
+                          ' بلا بلا بلا بلا بلا بلا',
+                          softWrap: true,
+                        ),
+                        Text(
+                          ' بلا بلا بلا بلا بلا بلا',
+                          softWrap: true,
+                        ),
+                      ],
+                    ),
                   ),
                   // tapHeaderToExpand: true,
                   // hasIcon: true,
