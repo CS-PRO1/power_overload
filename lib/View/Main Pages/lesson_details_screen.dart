@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/components.dart';
 import 'package:power_overload/constants.dart';
+//import 'package:readmore/readmore.dart';
 import 'package:readmore/readmore.dart';
 
 class LessonDetailsScreen extends StatelessWidget {
