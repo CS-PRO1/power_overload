@@ -61,14 +61,12 @@ class LessonDetailsScreen extends StatelessWidget {
                               height: 1,
                               color: Colors.grey,
                             )),
-                    Positioned(
+                    Positioned.directional(
+                      textDirection: TextDirection.ltr,
                       bottom: 20,
-                      right: 20.0,
-                      // or whatever
+                      end: 20,
                       child: MyFloatButton(
-                        onTap: () {
-                          //Get.toNamed('/addorder');
-                        },
+                        onTap: () {},
                       ),
                     )
                   ],
