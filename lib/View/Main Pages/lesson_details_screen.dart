@@ -42,6 +42,7 @@ class LessonDetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(15.0),
                 child: ExpandablePanel(
                   header: Text('افكار الحصة',
+                  textAlign: TextAlign.center,
                     textDirection: TextDirection.rtl,
                   ),
                   collapsed: Text(
