@@ -1,3 +1,4 @@
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:power_overload/components.dart';
 import 'package:power_overload/constants.dart';
@@ -37,16 +38,44 @@ class LessonDetailsScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              DropdownMenu(
-                dropdownMenuEntries: <DropdownMenuEntry<String>>[
-                  DropdownMenuEntry(value: 'BL1', label: 'BL1'),
-                ],
-                // menuStyle: MenuStyle(shape: Radius),
-                menuHeight: 260,
-                width: double.infinity,
-                label: Text(
-                  'افكار الحصة',
-                  style: TextStyle(fontSize: 15),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: ExpandablePanel(
+                  header: Text('افكار الحصة'),
+                  collapsed: Text(
+                    ' رؤية المزيد',
+                    softWrap: true,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  expanded: Column(
+                    children: [
+                      Text(
+                        '   لاالااات بلا تتنا  بلا تالا اريد بلا بلا بلا',
+                        softWrap: true,
+                        // textAlign: TextAlign.center,
+                        textDirection: TextDirection.rtl,
+                      ),
+                      Text(
+                        '  بلا بلا بلا بلا بلا بلا',
+                        softWrap: true,
+                      ),
+                      Text(
+                        '  بلا بلا بلا بلا بلا بلا',
+                        softWrap: true,
+                      ),
+                      Text(
+                        ' بلا بلا بلا بلا بلا بلا',
+                        softWrap: true,
+                      ),
+                      Text(
+                        ' بلا بلا بلا بلا بلا بلا',
+                        softWrap: true,
+                      ),
+                    ],
+                  ),
+                  // tapHeaderToExpand: true,
+                  // hasIcon: true,
                 ),
               ),
               Padding(
