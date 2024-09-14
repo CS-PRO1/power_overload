@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/components.dart';
+import 'package:power_overload/constants.dart';
+import 'package:readmore/readmore.dart';
 
 class LessonDetailsScreen extends StatelessWidget {
   const LessonDetailsScreen({super.key});
@@ -114,10 +116,15 @@ catItemBuilder(context, index) {
             Row(
               children: [
                 Flexible(
-                  child: Text(
-                    ' محتوى التعليق .....................',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                  child: ReadMoreText(
+                    ' محتوى التعليق .......................................................................................................................................',
+                    trimMode: TrimMode.Line,
+                    trimLines: 1,
+                    colorClickableText: green400,
+                    trimCollapsedText: 'عرض المزيد',
+                    trimExpandedText: 'عرض أقل',
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                    textAlign: TextAlign.right,
                   ),
                 ),
               ],

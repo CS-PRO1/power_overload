@@ -35,6 +35,8 @@ dependencies:
   shared_preferences:
   buildcondition:
   fluttertoast:
+  expandable:
+  readmore:
 
   cupertino_icons: ^1.0.8
   flutter:
