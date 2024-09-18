@@ -1,8 +1,5 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:power_overload/View/Main%20Pages/lessons_screen.dart';
 import 'package:power_overload/components.dart';
 import 'package:power_overload/constants.dart';
 
