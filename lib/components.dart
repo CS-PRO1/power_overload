@@ -278,7 +278,7 @@ toast(String msg) {
 
 
 
-Widget flowershape(BuildContext context, int index , List<String> page_info) {
+Widget flowershape(BuildContext context, String page_info) {
   return InkWell(
     splashColor: Colors.transparent,
     child: Padding(
@@ -302,12 +302,12 @@ Widget flowershape(BuildContext context, int index , List<String> page_info) {
           ),
           Center(
             child: Text(
-              page_info[index],
+              page_info,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: green100,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 16,
               ),
             ),
           ),
