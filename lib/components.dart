@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -271,4 +273,50 @@ toast(String msg) {
       backgroundColor: green400,
       textColor: Colors.white,
       fontSize: 16.0);
+}
+
+
+
+
+Widget flowershape(BuildContext context, int index , List<String> page_info) {
+  return InkWell(
+    splashColor: Colors.transparent,
+    child: Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              color: green400,
+            ),
+          ),
+          Transform.rotate(
+            angle: 45 * pi / 180,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                color: green300,
+              ),
+            ),
+          ),
+          Center(
+            child: Text(
+              page_info[index],
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: green100,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+    // onTap: () {
+    //   Navigator.of(context)
+    //       .push(MaterialPageRoute(builder: (context) => LessonsScreen()));
+    // },
+  );
 }

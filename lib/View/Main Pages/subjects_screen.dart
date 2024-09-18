@@ -42,51 +42,53 @@ class SubjectsScreen extends StatelessWidget {
                 crossAxisSpacing: 4,
                 mainAxisSpacing: 10,
                 children: List.generate(
-                    page_info.length, (index) => flowershape(context, index)),
+                    page_info.length, (index) => flowershape(context, index, page_info)),
               )),
         ));
   }
 
-  Widget flowershape(BuildContext context, int index) {
-    return InkWell(
-      splashColor: Colors.transparent,
-      child: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Stack(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: green400,
-              ),
-            ),
-            Transform.rotate(
-              angle: 45 * pi / 180,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  color: green300,
-                ),
-              ),
-            ),
-            Center(
-              child: Text(
-                page_info[index],
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: green100,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => LessonsScreen()));
-      },
-    );
-  }
+
+
+  // Widget flowershape(BuildContext context, int index) {
+  //   return InkWell(
+  //     splashColor: Colors.transparent,
+  //     child: Padding(
+  //       padding: const EdgeInsets.all(30.0),
+  //       child: Stack(
+  //         children: [
+  //           Container(
+  //             decoration: BoxDecoration(
+  //               borderRadius: BorderRadius.all(Radius.circular(10)),
+  //               color: green400,
+  //             ),
+  //           ),
+  //           Transform.rotate(
+  //             angle: 45 * pi / 180,
+  //             child: Container(
+  //               decoration: BoxDecoration(
+  //                 borderRadius: BorderRadius.all(Radius.circular(10)),
+  //                 color: green300,
+  //               ),
+  //             ),
+  //           ),
+  //           Center(
+  //             child: Text(
+  //               page_info[index],
+  //               textAlign: TextAlign.center,
+  //               style: TextStyle(
+  //                 color: green100,
+  //                 fontWeight: FontWeight.bold,
+  //                 fontSize: 20,
+  //               ),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //     onTap: () {
+  //       Navigator.of(context)
+  //           .push(MaterialPageRoute(builder: (context) => LessonsScreen()));
+  //     },
+  //   );
+  // }
 }

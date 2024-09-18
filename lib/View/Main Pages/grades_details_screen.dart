@@ -17,7 +17,36 @@ class GradesDetailsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('الفصل الاول')
+              Text('الفصل الاول',style: TextStyle(fontSize: 20),),
+              SizedBox(height: 200,),
+              Container(
+                child: Column(
+                  children: [
+                Row(
+                  children: [
+                    Text('الاختبارات الشفهية و الوظائف'),
+                  ],
+                ),SizedBox(height: 30,),
+                Row(
+                  children: [
+                    Text('الاختبارات الشهرية  '),
+                    
+                  ],
+                ),
+                SizedBox(height: 30,),
+                Row(
+                  children: [
+                    Text('  الامتحان'),
+                  ],
+                ),SizedBox(height: 30,),
+                Row(
+                  children: [
+                    Text('  المجموع '),
+                  ],
+                ),
+                
+                
+                ] )),
             ],
           ),
         ),
