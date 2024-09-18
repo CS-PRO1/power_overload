@@ -59,7 +59,8 @@ catItemBuilder(context, index) {
               ),
             ),
             Text(
-              '2024/12/9',textAlign: TextAlign.center,
+              '2024/12/9',
+              textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w100,
                   fontSize: 10,
@@ -69,6 +70,5 @@ catItemBuilder(context, index) {
         ),
       ),
     ),
-    
   );
 }
