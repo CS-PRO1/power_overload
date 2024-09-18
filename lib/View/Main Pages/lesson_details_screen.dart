@@ -41,13 +41,13 @@ class LessonDetailsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: ExpandablePanel(
-                  header: Text('افكار الحصة',
-                  textAlign: TextAlign.center,
+                  header: Text(
+                    'افكار الحصة',
+                    textAlign: TextAlign.center,
                     textDirection: TextDirection.rtl,
                   ),
                   collapsed: Text(
                     ' رؤية المزيد',
-                    
                     softWrap: true,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
