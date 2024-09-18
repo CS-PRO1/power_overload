@@ -19,8 +19,9 @@ class GradesScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-            SizedBox(height: 150,),
-               
+                SizedBox(
+                  height: 150,
+                ),
                 DropdownMenu(
                   dropdownMenuEntries: <DropdownMenuEntry<String>>[
                     DropdownMenuEntry(value: 'BL1', label: 'الفصل الاول'),
@@ -33,7 +34,8 @@ class GradesScreen extends StatelessWidget {
                     'اختر الفصل',
                     style: TextStyle(fontSize: 15),
                   ),
-                ), SizedBox(
+                ),
+                SizedBox(
                   height: 20,
                 ),
                 DropdownMenu(
@@ -69,26 +71,27 @@ class GradesScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 15),
                   ),
                 ),
-               
-                
-                SizedBox(height: 30,),
-                   defaultButton(
+                SizedBox(
+                  height: 30,
+                ),
+                defaultButton(
                   text: 'تم',
                   textsize: 16,
                   function: () {
                     //TODO Login Request Function
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => GradesDetailsScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => GradesDetailsScreen()));
                   },
-                ), SizedBox(height: 200,),
-        
-                    Row(
+                ),
+                SizedBox(
+                  height: 200,
+                ),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Icons.download_rounded,
                       color: Colors.grey,
-                      
                     ),
                     SizedBox(
                       width: 50,
