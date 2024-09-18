@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      locale: Locale('ar'),
+      locale: Locale('ar', ''),
       home: Directionality(
           textDirection: TextDirection.rtl, child: LoginScreen()),
     );

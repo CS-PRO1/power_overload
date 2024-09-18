@@ -275,9 +275,6 @@ toast(String msg) {
       fontSize: 16.0);
 }
 
-
-
-
 Widget flowershape(BuildContext context, String page_info) {
   return InkWell(
     splashColor: Colors.transparent,
@@ -318,5 +315,65 @@ Widget flowershape(BuildContext context, String page_info) {
     //   Navigator.of(context)
     //       .push(MaterialPageRoute(builder: (context) => LessonsScreen()));
     // },
+  );
+}
+
+Widget buildNewsItem(context) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Card(
+      clipBehavior: Clip.antiAlias,
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: InkWell(
+        onTap: () {},
+        child: Column(
+          children: [
+            Image.asset('assets/logo.png',
+                errorBuilder: (context, error, stackTrace) =>
+                    Image.asset('images/fallback/other.jpg')),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text('إعلان مهم',
+                        style: Theme.of(context).textTheme.titleLarge),
+                  ),
+                  Row(
+                    children: [
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text('البيتزا اطيب اكلة في الكون',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                              )),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          '2024/04/22',
+                          textAlign: TextAlign.right,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    ),
   );
 }

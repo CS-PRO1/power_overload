@@ -41,13 +41,11 @@ class SubjectsScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 crossAxisSpacing: 4,
                 mainAxisSpacing: 10,
-                children: List.generate(
-                    page_info.length, (index) => flowershape(context,  page_info[index])),
+                children: List.generate(page_info.length,
+                    (index) => flowershape(context, page_info[index])),
               )),
         ));
   }
-
-
 
   // Widget flowershape(BuildContext context, int index) {
   //   return InkWell(
