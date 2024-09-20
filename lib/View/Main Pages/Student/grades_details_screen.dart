@@ -45,7 +45,7 @@ class GradesDetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('الاختبارات الشهرية  '),
-                    flowershape(context, '196'),
+                    flowershape(context, '196 '),
                   ],
                 ),
                 SizedBox(
