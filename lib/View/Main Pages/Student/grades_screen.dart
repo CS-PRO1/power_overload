@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:power_overload/View/Main%20Pages/grades_details_screen.dart';
+import 'package:power_overload/View/Main%20Pages/Student/grades_details_screen.dart';
+//import 'package:power_overload/View/Main%20Pages/grades_details_screen.dart';
 import 'package:power_overload/components.dart';
 
 class GradesScreen extends StatelessWidget {

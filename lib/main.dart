@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:power_overload/Services/cache_helper.dart';
 import 'package:power_overload/Services/dio.dart';
 import 'package:power_overload/View/Auth/login_screen.dart';
+import 'package:power_overload/View/Teacher/marks_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: Locale('ar', ''),
       home: Directionality(
-          textDirection: TextDirection.rtl, child: LoginScreen()),
+          textDirection: TextDirection.rtl, child: MarksScreen()),
     );
   }
 }

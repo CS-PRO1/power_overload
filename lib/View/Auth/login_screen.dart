@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:power_overload/Cubits/auth_cubit.dart';
 import 'package:power_overload/Cubits/states.dart';
-import 'package:power_overload/View/Main%20Pages/landing_screen.dart';
+import 'package:power_overload/View/Main%20Pages/Student/landing_screen.dart';
+//import 'package:power_overload/View/Main%20Pages/landing_screen.dart';
 import 'package:power_overload/components.dart';
 import 'package:power_overload/constants.dart';
 
