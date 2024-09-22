@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:power_overload/components.dart';
 import 'package:power_overload/constants.dart';
 
@@ -23,7 +23,7 @@ class SubjectsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: green100,
+        backgroundColor: green50,
         appBar: MyAppBar(
           title: 'المواد',
           leading: AppBarPopupMenu(),
@@ -39,7 +39,10 @@ class SubjectsScreen extends StatelessWidget {
                 crossAxisSpacing: 4,
                 mainAxisSpacing: 10,
                 children: List.generate(page_info.length,
-                    (index) => flowershape(context, page_info[index])),
+                        (index) => flowershape(context, page_info[index]))
+                    .animate(interval: Duration(milliseconds: 50))
+                    .fadeIn()
+                    .slide(),
               )),
         ));
   }

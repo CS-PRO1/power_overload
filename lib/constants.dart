@@ -6,9 +6,11 @@ const Color black = Colors.white10;
 const Color blacktext = Colors.black;
 
 //Green Primaries
+const Color green50 = Color(0xFFEEF1EC);
+
 const Color green100 = Color(0xFFE1F0DA);
 const Color green200 = Color(0xff8dc63f);
-const Color green300 = Color (0xff75b43f);
+const Color green300 = Color(0xff75b43f);
 const Color green400 = Color(0xff478e3e);
 const Color green500 = Color(0xff00573d);
 

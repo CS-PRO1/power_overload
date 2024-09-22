@@ -275,7 +275,7 @@ toast(String msg) {
       fontSize: 16.0);
 }
 
-Widget flowershape(BuildContext context, String page_info) {
+Widget flowershape(BuildContext context, String text) {
   return InkWell(
     splashColor: Colors.transparent,
     child: Padding(
@@ -299,7 +299,7 @@ Widget flowershape(BuildContext context, String page_info) {
           ),
           Center(
             child: Text(
-              page_info,
+              text,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: green100,
@@ -322,8 +322,9 @@ Widget buildNewsItem(context) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Card(
+      surfaceTintColor: green100,
       clipBehavior: Clip.antiAlias,
-      elevation: 5,
+      elevation: 3,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: InkWell(
         onTap: () {},
@@ -332,13 +333,17 @@ Widget buildNewsItem(context) {
             Image.asset('assets/logo.png',
                 errorBuilder: (context, error, stackTrace) =>
                     Image.asset('images/fallback/other.jpg')),
+            Container(
+              height: 2,
+              color: green200,
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(2.0),
                     child: Text('إعلان مهم',
                         style: Theme.of(context).textTheme.titleLarge),
                   ),
@@ -400,7 +405,7 @@ Widget sRadio({
         ),
         Text(
           'الفصل الثاني',
-          style: TextStyle(color:green300),
+          style: TextStyle(color: green300),
         ),
         Radio(
             activeColor: green400,

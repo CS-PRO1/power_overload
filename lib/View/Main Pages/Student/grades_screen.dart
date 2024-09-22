@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_details_screen.dart';
 //import 'package:power_overload/View/Main%20Pages/grades_details_screen.dart';
 import 'package:power_overload/components.dart';
+import 'package:power_overload/constants.dart';
 
 class GradesScreen extends StatelessWidget {
   const GradesScreen({super.key});
@@ -87,18 +88,29 @@ class GradesScreen extends StatelessWidget {
                 SizedBox(
                   height: 200,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.download_rounded,
-                      color: Colors.grey,
-                    ),
-                    SizedBox(
-                      width: 50,
-                    ),
-                    Text('تنزيل الجلاء المدرسي')
-                  ],
+                Center(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: green400,
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    height: 50,
+                    width: 200,
+                    child: TextButton(
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.download,
+                              color: green50,
+                            ),
+                            Text(
+                              'تنزيل الجلاء المدرسي',
+                              style: TextStyle(color: green50),
+                            )
+                          ],
+                        )),
+                  ),
                 ),
               ],
             ),

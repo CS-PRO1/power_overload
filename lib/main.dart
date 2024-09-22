@@ -3,7 +3,9 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:power_overload/Services/cache_helper.dart';
 import 'package:power_overload/Services/dio.dart';
 import 'package:power_overload/View/Auth/login_screen.dart';
+import 'package:power_overload/View/Main%20Pages/Student/landing_screen.dart';
 import 'package:power_overload/View/Teacher/marks_screen.dart';
+import 'package:power_overload/constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,11 +21,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.green),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        scaffoldBackgroundColor: green50,
+      ),
       debugShowCheckedModeBanner: false,
       locale: Locale('ar', ''),
       home: Directionality(
-          textDirection: TextDirection.rtl, child: MarksScreen()),
+          textDirection: TextDirection.rtl, child: LandingScreen()),
     );
   }
 }
