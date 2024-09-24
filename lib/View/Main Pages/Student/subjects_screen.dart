@@ -26,7 +26,7 @@ class SubjectsScreen extends StatelessWidget {
         backgroundColor: green50,
         appBar: MyAppBar(
           title: 'المواد',
-          leading: AppBarPopupMenu(),
+          actions: [AppBarPopupMenu()],
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -43,11 +43,11 @@ class SubjectsScreen extends StatelessWidget {
                       .animate(
                         interval: Duration(milliseconds: 50),
                       )
-                      .slide(duration: Duration(milliseconds: 100))
+                      .slide(duration: Duration(milliseconds: 300))
                       .fadeIn(
                           curve: Curves.easeInOut,
-                          duration: Duration(milliseconds: 100))
-                      .flip(duration: Duration(milliseconds: 100)))),
+                          duration: Duration(milliseconds: 250))
+                      .flip(duration: Duration(milliseconds: 200)))),
         ));
   }
 

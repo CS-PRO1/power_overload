@@ -8,7 +8,7 @@ class SchedulesScreen extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         title: 'البرامج',
-        leading: AppBarPopupMenu(),
+        actions: [AppBarPopupMenu()],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),

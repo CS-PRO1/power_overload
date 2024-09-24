@@ -135,10 +135,8 @@ class LoginScreen extends StatelessWidget {
                                           textsize: 16,
                                           function: () {
                                             //TODO Login Request Function
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        LandingScreen()));
+                                            Navigator.of(context)
+                                                .pushReplacementNamed('/home');
                                           },
                                         ),
                                         SizedBox(

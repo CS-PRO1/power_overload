@@ -40,9 +40,11 @@ dependencies:
   choice:
   percent_indicator:
   flutter_animate:
+  #flutter_localizations:
+
 
   cupertino_icons: ^1.0.8
-  flutter:
+  flutter_localizations:
     sdk: flutter
 
 dev_dependencies:

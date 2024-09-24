@@ -12,7 +12,7 @@ class LessonDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          MyAppBar(title: 'الحصة الاولى', leading: AppBarPopupMenu(), actions: [
+          MyAppBar(title: 'الحصة الاولى',           actions: [AppBarPopupMenu(),
         IconButton(
           icon: Icon(Icons.file_open),
           onPressed: () {},

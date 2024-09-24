@@ -12,7 +12,8 @@ class GradesScreen extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         title: 'العلامات',
-        leading: AppBarPopupMenu(),
+                 actions: [AppBarPopupMenu()],
+
       ),
       body: SingleChildScrollView(
         child: Padding(

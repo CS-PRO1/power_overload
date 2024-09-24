@@ -9,8 +9,8 @@ class MarksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          MyAppBar(title: 'الحصة الاولى', leading: AppBarPopupMenu(), actions: [
+      appBar: MyAppBar(title: 'الحصة الاولى', actions: [
+        AppBarPopupMenu(),
         IconButton(
           icon: Icon(Icons.picture_as_pdf_rounded),
           onPressed: () {},

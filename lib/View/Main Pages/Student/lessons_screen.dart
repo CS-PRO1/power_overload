@@ -11,7 +11,7 @@ class LessonsScreen extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(
         title: 'حصص المادة',
-        leading: AppBarPopupMenu(),
+        actions: [AppBarPopupMenu()],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),

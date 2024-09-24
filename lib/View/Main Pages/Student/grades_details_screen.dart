@@ -18,7 +18,8 @@ class GradesDetailsScreen extends StatelessWidget {
       backgroundColor: green50,
       appBar: MyAppBar(
         title: 'العلامات',
-        leading: AppBarPopupMenu(),
+                  actions: [AppBarPopupMenu()],
+
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
