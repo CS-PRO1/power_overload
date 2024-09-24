@@ -1,7 +1,7 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:power_overload/components.dart';
-import 'package:power_overload/constants.dart';
+import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/constants.dart';
 //import 'package:readmore/readmore.dart';
 import 'package:readmore/readmore.dart';
 

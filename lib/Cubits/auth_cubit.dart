@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:power_overload/Cubits/states.dart';
+import 'package:power_overload/Services/cache_helper.dart';
 
 class AuthCubit extends Cubit<AppStates> {
   AuthCubit() : super(AppInitState());
   AuthCubit get(context) => BlocProvider.of(context);
-
 
 // Show/Hide Password
   bool ispasswordshown = false;
@@ -20,4 +20,11 @@ class AuthCubit extends Cubit<AppStates> {
     }
     emit(PasswordShowState());
   }
+}
+
+//Request Login
+void loginRequest() {
+  //TODO implement login request
+  CacheHelper.setString(
+      'role', 'admin'); //TODO add role from user model to cache
 }

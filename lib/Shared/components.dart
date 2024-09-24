@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:power_overload/constants.dart';
+import 'package:power_overload/Shared/constants.dart';
 
 Widget defaultButton({
   double width = 150,
@@ -29,8 +29,8 @@ Widget defaultButton({
         style: TextStyle(fontSize: textsize),
       ),
       style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(Colors.white),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        foregroundColor: WidgetStateProperty.all(Colors.white),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: StandardBorderRadius,
             side: BorderSide(color: Colors.white),
@@ -132,6 +132,7 @@ AppBar MyAppBar(
     centerTitle: true,
     title: Text(title),
     actions: actions,
+    foregroundColor: green500,
   );
 }
 
@@ -284,6 +285,13 @@ Widget flowershape(BuildContext context, String text) {
         children: [
           Container(
             decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey.shade400,
+                    blurRadius: 2,
+                    offset: Offset(-3, 3))
+              ],
+              border: Border.all(color: green300, width: 2),
               borderRadius: BorderRadius.all(Radius.circular(10)),
               color: green400,
             ),
@@ -292,6 +300,7 @@ Widget flowershape(BuildContext context, String text) {
             angle: 45 * pi / 180,
             child: Container(
               decoration: BoxDecoration(
+                border: Border.all(color: green200, width: 3),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 color: green300,
               ),

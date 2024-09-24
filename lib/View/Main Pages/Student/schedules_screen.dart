@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:power_overload/components.dart';
+import 'package:power_overload/Shared/components.dart';
 class SchedulesScreen extends StatelessWidget {
   const SchedulesScreen({super.key});
 

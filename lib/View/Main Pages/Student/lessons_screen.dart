@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/View/Main%20Pages/Student/lesson_details_screen.dart';
 //import 'package:power_overload/View/Main%20Pages/lesson_details_screen.dart';
-import 'package:power_overload/components.dart';
+import 'package:power_overload/Shared/components.dart';
 
 class LessonsScreen extends StatelessWidget {
   const LessonsScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_screen.dart';
-import 'package:power_overload/components.dart';
-import 'package:power_overload/constants.dart';
+import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/constants.dart';
 
 class MarksScreen extends StatelessWidget {
   const MarksScreen({super.key});

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:power_overload/components.dart';
-import 'package:power_overload/constants.dart';
+import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/constants.dart';
 
 class GradesDetailsScreen extends StatelessWidget {
   GradesDetailsScreen({super.key});
   List page_info = [
-    {'title': 'الاختبارات الشفهية والوظائف', 'mark': 196, 'max': 200},
+    {'title': 'الاختبارات الشفهية والوظائف', 'mark': 80, 'max': 200},
     {'title': 'الاختبارات الشهرية', 'mark': 134, 'max': 200},
     {'title': 'الامتحان', 'mark': 179, 'max': 200},
     {'title': 'المجموع', 'mark': 509, 'max': 600},
@@ -17,17 +17,44 @@ class GradesDetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: green50,
       appBar: MyAppBar(
-        title: 'مادة الرياضيات',
+        title: 'العلامات',
         leading: AppBarPopupMenu(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
-                height: 175,
-                width: 175,
-                child: flowershape(context, 'الفصل الأول')),
+                child: Column(
+              children: [
+                Text(
+                  'المادة: الرياضيات',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: green400,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  color: Colors.grey,
+                  height: 1.5,
+                  width: 200,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'الفصل: الأول',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: green400,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            )),
             GridView.count(
               crossAxisCount: 2,
               childAspectRatio: .7,
@@ -44,15 +71,31 @@ class GradesDetailsScreen extends StatelessWidget {
     );
   }
 
+  Widget percentLine(BuildContext context, Map page_info) {
+    return Padding(
+      padding: EdgeInsets.all(12.0),
+      child: LinearProgressIndicator(
+        backgroundColor: green100,
+        color: page_info['mark'] / page_info['max'] < 0.4
+            ? Colors.redAccent
+            : green400,
+        value: page_info['mark'] / page_info['max'],
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
+    );
+  }
+
   Widget PercentCircle(BuildContext context, Map page_info) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       child: CircularPercentIndicator(
         radius: 75,
-        lineWidth: 30,
+        lineWidth: 5,
         percent: page_info['mark'] / page_info['max'],
-        progressColor: green400,
-        arcType: ArcType.FULL,
+        progressColor: page_info['mark'] / page_info['max'] < 0.4
+            ? Colors.redAccent
+            : green400,
+        arcType: ArcType.HALF,
         arcBackgroundColor: green100,
         animation: true,
         center: Column(
@@ -74,7 +117,7 @@ class GradesDetailsScreen extends StatelessWidget {
           ],
         ),
         animationDuration: 1500,
-        curve: Curves.easeInOut,
+        curve: Curves.fastEaseInToSlowEaseOut,
         footer: Text(
           page_info['title']!,
           textAlign: TextAlign.center,

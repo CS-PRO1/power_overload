@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:power_overload/components.dart';
-import 'package:power_overload/constants.dart';
+import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/constants.dart';
 
 class SubjectsScreen extends StatelessWidget {
   SubjectsScreen({super.key});
@@ -30,20 +30,24 @@ class SubjectsScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(30.0),
               child: GridView.count(
-                childAspectRatio: 1,
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                crossAxisCount: 2,
-                crossAxisSpacing: 4,
-                mainAxisSpacing: 10,
-                children: List.generate(page_info.length,
-                        (index) => flowershape(context, page_info[index]))
-                    .animate(interval: Duration(milliseconds: 50))
-                    .fadeIn()
-                    .slide(),
-              )),
+                  childAspectRatio: 1,
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 4,
+                  mainAxisSpacing: 10,
+                  children: List.generate(page_info.length,
+                          (index) => flowershape(context, page_info[index]))
+                      .animate(
+                        interval: Duration(milliseconds: 50),
+                      )
+                      .slide(duration: Duration(milliseconds: 100))
+                      .fadeIn(
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 100))
+                      .flip(duration: Duration(milliseconds: 100)))),
         ));
   }
 

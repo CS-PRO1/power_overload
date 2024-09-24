@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:power_overload/components.dart';
+import 'package:power_overload/Shared/components.dart';
 
 class AnnouncementsScreen extends StatelessWidget {
   const AnnouncementsScreen({super.key});

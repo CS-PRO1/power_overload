@@ -4,8 +4,8 @@ import 'package:power_overload/Cubits/auth_cubit.dart';
 import 'package:power_overload/Cubits/states.dart';
 import 'package:power_overload/View/Main%20Pages/Student/landing_screen.dart';
 //import 'package:power_overload/View/Main%20Pages/landing_screen.dart';
-import 'package:power_overload/components.dart';
-import 'package:power_overload/constants.dart';
+import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/constants.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
