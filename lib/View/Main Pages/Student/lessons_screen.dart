@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:power_overload/Services/RBAC/role_based_widget.dart';
+import 'package:power_overload/Services/RBAC/role_enum.dart';
 import 'package:power_overload/View/Main%20Pages/Student/lesson_details_screen.dart';
 //import 'package:power_overload/View/Main%20Pages/lesson_details_screen.dart';
 import 'package:power_overload/Shared/components.dart';
@@ -28,6 +30,16 @@ class LessonsScreen extends StatelessWidget {
                       height: 1,
                       color: Colors.grey,
                     )),
+            WidgetWithRole(
+              allowedRoles: [UserRole.admin],
+              child: Positioned(
+                bottom: 20,
+                right: 20,
+                child: MyFloatButton(
+                  onTap: () {},
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -48,9 +60,15 @@ catItemBuilder(context, index) {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(
-              Icons.arrow_back_ios_rounded,
-              color: Colors.grey,
+            WidgetWithRole(
+              allowedRoles: [UserRole.admin],
+              child: IconButton(
+                icon: Icon(
+                  Icons.delete_outline_rounded,
+                  color: Colors.red[300],
+                ),
+                onPressed: () {},
+              ),
             ),
             Flexible(
               child: Text(
@@ -66,6 +84,10 @@ catItemBuilder(context, index) {
                   fontWeight: FontWeight.w100,
                   fontSize: 10,
                   color: Colors.grey[600]),
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.grey,
             ),
           ],
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
+import 'package:power_overload/View/Main%20Pages/Student/lessons_screen.dart';
 
 class SubjectsScreen extends StatelessWidget {
   SubjectsScreen({super.key});
@@ -38,8 +39,15 @@ class SubjectsScreen extends StatelessWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 4,
                   mainAxisSpacing: 10,
-                  children: List.generate(page_info.length,
-                          (index) => flowershape(context, page_info[index]))
+                  children: List.generate(
+                          page_info.length,
+                          (index) =>
+                              flowershape(context, page_info[index], ontap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LessonsScreen()));
+                              }))
                       .animate(
                         interval: Duration(milliseconds: 50),
                       )

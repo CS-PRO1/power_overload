@@ -18,7 +18,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
-  //var token = CacheHelper.get('token') ?? '';
+
+  CacheHelper.setString('role', 'user');
   DioHelper.init();
   FlutterNativeSplash.remove();
   runApp(MyApp());
