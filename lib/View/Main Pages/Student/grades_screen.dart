@@ -30,10 +30,13 @@ class GradesScreen extends StatelessWidget {
                         ),
                         child: Column(
                           children: [
-                            Text("أرسل شكوى"),
+                            Text(
+                              "أرسل شكوى",
+                              style: TextStyle(fontSize: 25),
+                            ),
                             SizedBox(height: 20),
                             TextField(
-                              minLines: 5,
+                              //minLines: 5,
                             ),
                             TextButton(onPressed: () {}, child: Text('إرسال'))
                           ],
