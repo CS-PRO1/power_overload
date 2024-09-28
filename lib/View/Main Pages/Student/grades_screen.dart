@@ -3,6 +3,7 @@ import 'package:power_overload/View/Main%20Pages/Student/grades_details_screen.d
 //import 'package:power_overload/View/Main%20Pages/grades_details_screen.dart';
 import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
+import 'package:flutter/cupertino.dart';
 
 class GradesScreen extends StatelessWidget {
   const GradesScreen({super.key});
@@ -11,9 +12,40 @@ class GradesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
+        leading: Row(
+          children: [
+            IconButton(
+              icon: Icon(CupertinoIcons.chat_bubble_2_fill),
+              onPressed: () {},
+            ),
+            IconButton(
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: green100,
+                          ),
+                          child: Column(
+                            children: [
+                              Text("أرسل شكوى"),
+                              SizedBox(height: 20),
+                              TextField(
+                                minLines: 5,
+                              ),
+                              TextButton(onPressed: () {}, child: Text('إرسال'))
+                            ],
+                          ),
+                        );
+                      });
+                },
+                icon: Icon(Icons.report))
+          ],
+        ),
         title: 'العلامات',
-                 actions: [AppBarPopupMenu()],
-
+        actions: [AppBarPopupMenu()],
       ),
       body: SingleChildScrollView(
         child: Padding(
