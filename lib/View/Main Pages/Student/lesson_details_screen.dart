@@ -1,5 +1,6 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
 //import 'package:readmore/readmore.dart';
@@ -11,14 +12,10 @@ class LessonDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          MyAppBar(title: 'الحصة الاولى',           actions: [AppBarPopupMenu(),
+      appBar: MyAppBar(title: 'الحصة الاولى', actions: [
+        AppBarPopupMenu(),
         IconButton(
           icon: Icon(Icons.file_open),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: Icon(Icons.star),
           onPressed: () {},
         ),
       ]),
@@ -46,7 +43,7 @@ class LessonDetailsScreen extends StatelessWidget {
                       header: Text(
                         'افكار الحصة',
                         textDirection: TextDirection.rtl,
-                        style: TextStyle(fontSize: 25),
+                        style: TextStyle(fontSize: 20),
                       ),
                       collapsed: SizedBox(
                         height: 0,
@@ -82,6 +79,43 @@ class LessonDetailsScreen extends StatelessWidget {
                       ),
                       // tapHeaderToExpand: true,
                       // hasIcon: true,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Container(
+                      
+                      width: double.infinity,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: green150,width: 3),
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: <Color>[green300, green100]),
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'تقييم الحصة : ',
+                              style: TextStyle(
+                                  color: green300,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            RatingStars(
+                              value: 1,
+                              starColor: green300,
+                              starOffColor: green100,
+                              starSize: 20,
+                              valueLabelVisibility: false,
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   Padding(

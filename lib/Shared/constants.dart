@@ -9,6 +9,7 @@ const Color blacktext = Colors.black;
 const Color green50 = Color(0xFFEEF1EC);
 
 const Color green100 = Color(0xFFE1F0DA);
+const Color green150 = Color(0xFFBADEA1);
 const Color green200 = Color(0xff8dc63f);
 const Color green300 = Color(0xff75b43f);
 const Color green400 = Color(0xff478e3e);
