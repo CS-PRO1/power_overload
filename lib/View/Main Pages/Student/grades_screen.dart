@@ -28,18 +28,22 @@ class GradesScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                           color: green100,
                         ),
-                        child: Column(
-                          children: [
-                            Text(
-                              "أرسل شكوى",
-                              style: TextStyle(fontSize: 25),
-                            ),
-                            SizedBox(height: 20),
-                            TextField(
-                              //minLines: 5,
-                            ),
-                            TextButton(onPressed: () {}, child: Text('إرسال'))
-                          ],
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            children: [
+                              
+                              Text(
+                                "أرسل شكوى",
+                                style: TextStyle(fontSize: 25),
+                              ),
+                              SizedBox(height: 20),
+                              TextField(
+                                //minLines: 5,
+                              ),
+                              TextButton(onPressed: () {}, child: Text('إرسال'))
+                            ],
+                          ),
                         ),
                       );
                     },
