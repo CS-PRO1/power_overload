@@ -12,42 +12,35 @@ class GradesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
-        leading: Row(
-          children: [
-            IconButton(
-              icon: Icon(CupertinoIcons.chat_bubble_2_fill),
-              onPressed: () {},
-            ),
-            IconButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: green100,
+        leading: IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: green100,
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          "أرسل شكوى",
+                          style: TextStyle(fontSize: 25),
                         ),
-                        child: Column(
-                          children: [
-                            Text(
-                              "أرسل شكوى",
-                              style: TextStyle(fontSize: 25),
+                        SizedBox(height: 20),
+                        TextField(
+
+                            //minLines: 5,
                             ),
-                            SizedBox(height: 20),
-                            TextField(
-                              //minLines: 5,
-                            ),
-                            TextButton(onPressed: () {}, child: Text('إرسال'))
-                          ],
-                        ),
-                      );
-                    },
+                        TextButton(onPressed: () {}, child: Text('إرسال'))
+                      ],
+                    ),
                   );
                 },
-                icon: Icon(Icons.report))
-          ],
-        ),
+              );
+            },
+            icon: Icon(Icons.report)),
         title: 'العلامات',
         actions: [AppBarPopupMenu()],
       ),
