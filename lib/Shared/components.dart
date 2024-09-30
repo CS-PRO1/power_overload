@@ -70,7 +70,7 @@ Widget myTextField(
       focusedBorder: OutlineInputBorder(
         borderSide:
             BorderSide(color: Theme.of(context).primaryColor, width: 3.0),
-        borderRadius: ActiveBorderRadius,
+        borderRadius: StandardBorderRadius,
       ),
       errorBorder: OutlineInputBorder(
         borderSide: const BorderSide(color: Colors.redAccent, width: 2.0),

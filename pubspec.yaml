@@ -41,6 +41,8 @@ dependencies:
   percent_indicator:
   flutter_animate:
   flutter_rating_stars:
+  searchable_listview:
+
 
   cupertino_icons: ^1.0.8
   flutter_localizations:

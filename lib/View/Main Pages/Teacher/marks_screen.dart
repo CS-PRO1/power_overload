@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_screen.dart';
 import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
+import 'package:power_overload/View/Main%20Pages/Teacher/marks_list_screen.dart';
 
 class MarksScreen extends StatelessWidget {
   const MarksScreen({super.key});
@@ -10,7 +11,10 @@ class MarksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(title: 'الحصة الاولى', actions: [
-        AppBarPopupMenu(),
+        IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {},
+        ),
         IconButton(
           icon: Icon(Icons.picture_as_pdf_rounded),
           onPressed: () {},
@@ -19,6 +23,7 @@ class MarksScreen extends StatelessWidget {
           icon: Icon(Icons.table_view_rounded),
           onPressed: () {},
         ),
+        AppBarPopupMenu(),
       ]),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -117,15 +122,15 @@ class MarksScreen extends StatelessWidget {
                   children: [
                     MenuButton(
                       label: 'شفهي',
-                      builder: (_) => GradesScreen(),
+                      builder: (_) => MarksListScreen(),
                     ),
                     MenuButton(
                       label: 'مذاكرة',
-                      builder: (_) => GradesScreen(),
+                      builder: (_) => MarksListScreen(),
                     ),
                     MenuButton(
                       label: 'امتحان',
-                      builder: (_) => GradesScreen(),
+                      builder: (_) => MarksListScreen(),
                     ),
                   ],
                 ),
