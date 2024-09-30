@@ -7,9 +7,8 @@ import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/View/Main%20Pages/Teacher/add_lesson_screen.dart';
 
 class LessonsScreen extends StatelessWidget {
-   LessonsScreen({super.key});
-    TextEditingController complaints = new TextEditingController();
-
+  LessonsScreen({super.key});
+  TextEditingController complaints = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +16,9 @@ class LessonsScreen extends StatelessWidget {
       appBar: MyAppBar(
         title: 'حصص المادة',
         actions: [AppBarPopupMenu()],
-                leading: IconButton(
+        leading: IconButton(
             onPressed: () {
-              complaintsDialog(context,complaints);
+              complaintsDialog(context, complaints);
             },
             icon: Icon(Icons.report)),
       ),
@@ -44,8 +43,9 @@ class LessonsScreen extends StatelessWidget {
                 bottom: 20,
                 right: 20,
                 child: MyFloatButton(
+                  icon: Icons.add,
                   onTap: () {
-                     Navigator.of(context).push(MaterialPageRoute(
+                    Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => AddLessonScreen()));
                   },
                 ),
