@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
+import 'package:power_overload/View/Main%20Pages/Student/complaints_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/lessons_screen.dart';
 
 class SubjectsScreen extends StatelessWidget {

@@ -4,6 +4,7 @@ import 'package:power_overload/Services/cache_helper.dart';
 import 'package:power_overload/Services/dio.dart';
 import 'package:power_overload/View/Auth/login_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/announcements_screen.dart';
+import 'package:power_overload/View/Main%20Pages/Student/complaints_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_details_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/landing_screen.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         '/grades': (context) => GradesScreen(),
         '/grade_details': (context) => GradesDetailsScreen(),
         '/announcements': (context) => AnnouncementsScreen(),
+        '/complaints': (context) => ComplaintsScreen(),
         '/teacher/marks': (context) => MarksScreen()
       },
       //home: LoginScreen(),

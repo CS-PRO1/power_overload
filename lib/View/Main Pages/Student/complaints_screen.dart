@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:power_overload/Services/RBAC/role_based_widget.dart';
 import 'package:power_overload/Services/RBAC/role_enum.dart';
 import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/constants.dart';
 
 class ComplaintsScreen extends StatelessWidget {
-  const ComplaintsScreen({super.key});
+  ComplaintsScreen({super.key});
+  TextEditingController newcomplaintcontroller = TextEditingController();
+  bool isAnonymous = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +28,58 @@ class ComplaintsScreen extends StatelessWidget {
                       height: 1,
                       color: Colors.grey,
                     )),
-            WidgetWithRole(
-              allowedRoles: [UserRole.admin],
-              child: Positioned(
-                bottom: 20,
-                right: 20,
-                child: MyFloatButton(
-                  onTap: () {},
-                ),
+            Positioned(
+              bottom: 20,
+              right: 20,
+              child: MyFloatButton(
+                icon: Icons.add_circle_outlined,
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: green100,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                "أرسل شكوى",
+                                style: TextStyle(fontSize: 25),
+                              ),
+                              SizedBox(height: 20),
+                              myTextField(
+                                  newcomplaintcontroller, context, 'نص الشكوى',
+                                  height: 6, maxLines: 6),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text('إرسال كمجهول'),
+                                  Checkbox(
+                                      value: isAnonymous,
+                                      onChanged: (value) {
+                                        value = !value!;
+                                        isAnonymous = !isAnonymous;
+                                      }),
+                                ],
+                              ),
+                              SizedBox(height: 20),
+                              defaultButton(
+                                text: 'إرسال',
+                                function: () {},
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
             )
           ],
@@ -52,16 +99,16 @@ catItemBuilder(context, index) {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(
-              Icons.download_rounded,
-              color: Colors.grey,
-            ),
             Flexible(
               child: Text(
                 'الشكوى #001',
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
               ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.grey,
             ),
           ],
         ),
