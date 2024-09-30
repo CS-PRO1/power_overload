@@ -6,6 +6,7 @@ import 'package:power_overload/View/Main%20Pages/Student/lessons_screen.dart';
 
 class SubjectsScreen extends StatelessWidget {
   SubjectsScreen({super.key});
+  TextEditingController complaints = new TextEditingController();
 
   List<String> page_info = [
     'الرياضيات',
@@ -28,6 +29,11 @@ class SubjectsScreen extends StatelessWidget {
         appBar: MyAppBar(
           title: 'المواد',
           actions: [AppBarPopupMenu()],
+          leading: IconButton(
+              onPressed: () {
+                complaintsDialog(context, complaints);
+              },
+              icon: Icon(Icons.report)),
         ),
         body: SingleChildScrollView(
           child: Padding(

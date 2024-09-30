@@ -6,7 +6,8 @@ import 'package:power_overload/Shared/constants.dart';
 import 'package:flutter/cupertino.dart';
 
 class GradesScreen extends StatelessWidget {
-  const GradesScreen({super.key});
+   GradesScreen({super.key});
+  TextEditingController complaints =new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -14,31 +15,7 @@ class GradesScreen extends StatelessWidget {
       appBar: MyAppBar(
         leading: IconButton(
             onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (context) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: green100,
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "أرسل شكوى",
-                          style: TextStyle(fontSize: 25),
-                        ),
-                        SizedBox(height: 20),
-                        TextField(
-
-                            //minLines: 5,
-                            ),
-                        TextButton(onPressed: () {}, child: Text('إرسال'))
-                      ],
-                    ),
-                  );
-                },
-              );
+              complaintsDialog(context, complaints);
             },
             icon: Icon(Icons.report)),
         title: 'العلامات',
