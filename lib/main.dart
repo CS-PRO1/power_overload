@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      initialRoute: '/',
+      initialRoute: '/teacher/marks',
       routes: {
         '/': (context) => LoginScreen(),
         //'/home': (context) => LandingScreen(),
