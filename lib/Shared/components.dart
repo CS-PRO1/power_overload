@@ -34,7 +34,7 @@ Widget defaultButton({
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: StandardBorderRadius,
-            side: BorderSide(color: Colors.white),
+          //  side: BorderSide(color: Colors.white),
           ),
         ),
       ),
@@ -448,4 +448,86 @@ class check extends State<statefull> {
       ],
     );
   }
+}
+
+Future complaintsDialog(BuildContext context, TextEditingController complaints){
+  return showModalBottomSheet(
+    context: context,
+    builder: (context) {
+      return Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: green100,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                "أرسل شكوى",
+                style: TextStyle(fontSize: 25, color: green300),
+              ),
+              //SizedBox(height: 20),
+              myTextField(
+                complaints,
+                context,
+                'نص الشكوى : ',
+                prefixIcon: null,
+                obscureText: false,
+                height: 5,
+                maxLines: 6,
+              ),
+              defaultButton(function: () {}, text: 'إرسال')
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+
+
+Widget datePicker(BuildContext context) {
+  DateTime _dateTime = DateTime.now();
+  void _showDatePicker() {
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2050),
+    ).then((value) {
+      _dateTime = value!;
+    });
+  }
+
+  return SizedBox(
+    width: 200,
+    child: Card(
+      color: bglight,
+      elevation: 1,
+      shape: LinearBorder.bottom(side: BorderSide(color: green400, width: 2)),
+      child: InkWell(
+        onTap: _showDatePicker,
+        child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                _dateTime.year.toString() +
+                    '/' +
+                    _dateTime.month.toString() +
+                    '/' +
+                    _dateTime.day.toString(),
+                style: TextStyle(fontSize: 20),
+              ),
+              Icon(Icons.calendar_month_outlined),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }

@@ -37,6 +37,7 @@ dependencies:
   fluttertoast:
   expandable:
   readmore:
+  table_calendar:
   choice:
   percent_indicator:
   flutter_animate:

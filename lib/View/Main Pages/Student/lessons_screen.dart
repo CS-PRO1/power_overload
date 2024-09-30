@@ -4,9 +4,11 @@ import 'package:power_overload/Services/RBAC/role_enum.dart';
 import 'package:power_overload/View/Main%20Pages/Student/lesson_details_screen.dart';
 //import 'package:power_overload/View/Main%20Pages/lesson_details_screen.dart';
 import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/View/Main%20Pages/Teacher/add_lesson_screen.dart';
 
 class LessonsScreen extends StatelessWidget {
-  const LessonsScreen({super.key});
+  LessonsScreen({super.key});
+  TextEditingController complaints = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +16,11 @@ class LessonsScreen extends StatelessWidget {
       appBar: MyAppBar(
         title: 'حصص المادة',
         actions: [AppBarPopupMenu()],
+        leading: IconButton(
+            onPressed: () {
+              complaintsDialog(context, complaints);
+            },
+            icon: Icon(Icons.report)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -36,7 +43,11 @@ class LessonsScreen extends StatelessWidget {
                 bottom: 20,
                 right: 20,
                 child: MyFloatButton(
-                  onTap: () {},
+                  icon: Icons.add,
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => AddLessonScreen()));
+                  },
                 ),
               ),
             )

@@ -20,7 +20,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
 
-  CacheHelper.setString('role', 'user');
+  CacheHelper.setString('role', 'admin');
   DioHelper.init();
   FlutterNativeSplash.remove();
   runApp(MyApp());
