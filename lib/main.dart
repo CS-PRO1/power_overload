@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:power_overload/Services/cache_helper.dart';
 import 'package:power_overload/Services/dio.dart';
 import 'package:power_overload/View/Auth/login_screen.dart';
+import 'package:power_overload/View/Main%20Pages/Parent/behavioral_notes.dart';
 import 'package:power_overload/View/Main%20Pages/Student/announcements_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/complaints_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_details_screen.dart';
@@ -20,7 +21,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
 
-  CacheHelper.setString('role', 'admin');
+  CacheHelper.setString('role', 'manager');
   DioHelper.init();
   FlutterNativeSplash.remove();
   runApp(MyApp());
@@ -47,7 +48,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => LoginScreen(),
-        '/home': (context) => LandingScreen(),
+        //'/home': (context) => LandingScreen(),
+        '/home': (context) => BehavioralNotes(),
         '/subjects': (context) => SubjectsScreen(),
         '/schedules': (context) => SchedulesScreen(),
         '/lessons': (context) => LessonsScreen(),
