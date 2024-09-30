@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:power_overload/Shared/constants.dart';
+import 'package:power_overload/View/Main%20Pages/Student/complaints_screen.dart';
 
 Widget defaultButton({
   double width = 150,
@@ -169,7 +170,7 @@ Widget AppBarPopupMenu() {
                 child: Row(
                   children: [
                     Icon(
-                      CupertinoIcons.question_circle,
+                      CupertinoIcons.exclamationmark_circle,
                       color: green400,
                     ),
                     SizedBox(
@@ -188,13 +189,13 @@ Widget AppBarPopupMenu() {
                   ],
                 ),
                 onTap: () {
-                  //TODO
+                  Navigator.of(context).pushNamed('/complaints');
                 }),
             PopupMenuItem(
                 child: Row(
                   children: [
                     Icon(
-                      Icons.settings,
+                      Icons.settings_outlined,
                       color: green400,
                     ),
                     SizedBox(
@@ -243,7 +244,7 @@ Widget AppBarPopupMenu() {
           ]);
 }
 
-Widget MyFloatButton({VoidCallback? onTap}) {
+Widget MyFloatButton({VoidCallback? onTap, IconData? icon}) {
   return Container(
     child: InkWell(
       onTap: onTap,
@@ -256,7 +257,7 @@ Widget MyFloatButton({VoidCallback? onTap}) {
           color: green200,
         ),
         child: Icon(
-          Icons.add_comment,
+          icon,
           color: green400,
           size: 25.0,
         ),

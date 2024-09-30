@@ -6,18 +6,12 @@ import 'package:power_overload/Shared/constants.dart';
 import 'package:flutter/cupertino.dart';
 
 class GradesScreen extends StatelessWidget {
-   GradesScreen({super.key});
-  TextEditingController complaints =new TextEditingController();
+  const GradesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
-        leading: IconButton(
-            onPressed: () {
-              complaintsDialog(context, complaints);
-            },
-            icon: Icon(Icons.report)),
         title: 'العلامات',
         actions: [AppBarPopupMenu()],
       ),

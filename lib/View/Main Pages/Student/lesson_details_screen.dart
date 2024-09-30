@@ -140,6 +140,7 @@ class LessonDetailsScreen extends StatelessWidget {
             bottom: 20,
             right: 20,
             child: MyFloatButton(
+              icon: Icons.add_comment_rounded,
               onTap: () {},
             ),
           )
