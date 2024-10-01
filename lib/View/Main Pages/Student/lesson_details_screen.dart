@@ -1,23 +1,26 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
+import 'package:power_overload/Services/RBAC/role_based_widget.dart';
+import 'package:power_overload/Services/RBAC/role_enum.dart';
 import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
 //import 'package:readmore/readmore.dart';
 import 'package:readmore/readmore.dart';
 
 class LessonDetailsScreen extends StatelessWidget {
-  const LessonDetailsScreen({super.key});
+  LessonDetailsScreen({super.key});
+  TextEditingController _newcommentcontroller = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(title: 'الحصة الاولى', actions: [
-        AppBarPopupMenu(),
         IconButton(
           icon: Icon(Icons.file_open),
           onPressed: () {},
         ),
+        AppBarPopupMenu(),
       ]),
       body: Stack(
         children: [
@@ -84,11 +87,10 @@ class LessonDetailsScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Container(
-                      
                       width: double.infinity,
                       height: 50,
                       decoration: BoxDecoration(
-                        border: Border.all(color: green150,width: 3),
+                        border: Border.all(color: green150, width: 3),
                         gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
@@ -100,18 +102,27 @@ class LessonDetailsScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'تقييم الحصة : ',
+                              'تقييم الحصة : 3.2',
                               style: TextStyle(
                                   color: green300,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
-                            RatingStars(
-                              value: 1,
-                              starColor: green300,
-                              starOffColor: green100,
-                              starSize: 20,
-                              valueLabelVisibility: false,
+                            SizedBox(
+                              width: 20,
+                            ),
+                            WidgetWithRole(
+                              allowedRoles: [
+                                UserRole.superadmin,
+                                UserRole.student
+                              ],
+                              child: RatingStars(
+                                value: 3,
+                                starColor: green300,
+                                starOffColor: green100,
+                                starSize: 20,
+                                valueLabelVisibility: false,
+                              ),
                             ),
                           ],
                         ),
@@ -141,7 +152,38 @@ class LessonDetailsScreen extends StatelessWidget {
             right: 20,
             child: MyFloatButton(
               icon: Icons.add_comment_rounded,
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => Dialog(
+                          child: Container(
+                            height: 350,
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    'إضافة تعليق',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  myTextField(_newcommentcontroller, context,
+                                      'نص التعليق',
+                                      height: 4, maxLines: 5),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  defaultButton(text: 'إرسال', function: () {})
+                                ],
+                              ),
+                            ),
+                          ),
+                        ));
+              },
             ),
           )
         ],
@@ -162,20 +204,23 @@ catItemBuilder(context, index) {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Flexible(
+                  child: Text(
+                    'اسم الطالب',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                        color: green300),
+                  ),
+                ),
                 Text(
                   '2024/12/9',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.w100,
-                      fontSize: 10,
+                      fontSize: 12,
                       color: Colors.grey[600]),
-                ),
-                Flexible(
-                  child: Text(
-                    'اسم الطالب',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-                  ),
                 ),
               ],
             ),
@@ -188,7 +233,7 @@ catItemBuilder(context, index) {
                     trimLines: 1,
                     colorClickableText: green400,
                     trimCollapsedText: 'عرض المزيد',
-                    trimExpandedText: 'عرض أقل',
+                    trimExpandedText: '',
                     style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                     textAlign: TextAlign.right,
                   ),

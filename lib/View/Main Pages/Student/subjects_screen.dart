@@ -30,11 +30,6 @@ class SubjectsScreen extends StatelessWidget {
         appBar: MyAppBar(
           title: 'المواد',
           actions: [AppBarPopupMenu()],
-          leading: IconButton(
-              onPressed: () {
-                complaintsDialog(context, complaints);
-              },
-              icon: Icon(Icons.report)),
         ),
         body: SingleChildScrollView(
           child: Padding(

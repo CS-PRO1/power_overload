@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/Shared/components.dart';
-class SchedulesScreen extends StatelessWidget {
-   SchedulesScreen({super.key});
-    TextEditingController complaints = new TextEditingController();
 
+class SchedulesScreen extends StatelessWidget {
+  SchedulesScreen({super.key});
+  TextEditingController complaints = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +11,6 @@ class SchedulesScreen extends StatelessWidget {
       appBar: MyAppBar(
         title: 'البرامج',
         actions: [AppBarPopupMenu()],
-                leading: IconButton(
-            onPressed: () {
-              complaintsDialog(context, complaints);
-            },
-            icon: Icon(Icons.report)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -39,9 +34,6 @@ class SchedulesScreen extends StatelessWidget {
   }
 }
 
-
-
-
 catItemBuilder(context, index) {
   return InkWell(
     onTap: () {}, //=> Get.toNamed('/orderdetails'),
@@ -63,7 +55,6 @@ catItemBuilder(context, index) {
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
               ),
             ),
-          
           ],
         ),
       ),

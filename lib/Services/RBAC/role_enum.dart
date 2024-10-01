@@ -1,7 +1,9 @@
 enum UserRole {
-  admin('admin', 3),
-  manager('manager', 2),
-  user('user', 1);
+  superadmin('superadmin', 5),
+  principle('principle', 4),
+  teacher('teacher', 3),
+  parent('parent', 2),
+  student('student', 1);
 
   const UserRole(this.name, this.level);
 
@@ -13,12 +15,18 @@ enum UserRole {
 
   factory UserRole.fromJson(String? role) {
     switch (role) {
-      case "admin":
-        return UserRole.admin;
-      case "manager":
-        return UserRole.manager;
+      case "superadmin":
+        return UserRole.superadmin;
+      case "principle":
+        return UserRole.principle;
+      case "teacher":
+        return UserRole.teacher;
+      case "parent":
+        return UserRole.parent;
+      case "student":
+        return UserRole.student;
       default:
-        return UserRole.user;
+        return UserRole.student;
     }
   }
 }

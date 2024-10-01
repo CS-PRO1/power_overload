@@ -16,11 +16,6 @@ class LessonsScreen extends StatelessWidget {
       appBar: MyAppBar(
         title: 'حصص المادة',
         actions: [AppBarPopupMenu()],
-        leading: IconButton(
-            onPressed: () {
-              complaintsDialog(context, complaints);
-            },
-            icon: Icon(Icons.report)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -38,7 +33,7 @@ class LessonsScreen extends StatelessWidget {
                       color: Colors.grey,
                     )),
             WidgetWithRole(
-              allowedRoles: [UserRole.admin],
+              allowedRoles: [UserRole.teacher],
               child: Positioned(
                 bottom: 20,
                 right: 20,
@@ -72,7 +67,7 @@ catItemBuilder(context, index) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             WidgetWithRole(
-              allowedRoles: [UserRole.admin],
+              allowedRoles: [UserRole.teacher],
               child: IconButton(
                 icon: Icon(
                   Icons.delete_outline_rounded,
