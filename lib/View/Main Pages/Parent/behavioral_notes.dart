@@ -20,115 +20,227 @@ class BehavioralNotes extends StatelessWidget {
           // actions: [AppBarPopupMenu()],
         ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
           child: Container(
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Expanded(
-                child: AnimatedFold(
-                  positive: false,
-                  key: _foldingCellKey2,
-                  align: Alignment.centerRight,
-                  frontWidget: InkWell(
-                    onTap: () => _foldingCellKey2.currentState?.toggleFold(),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: .5,
-                          color: const Color.fromARGB(255, 87, 60, 50),
-                        ),
-                        borderRadius:
-                            BorderRadius.only(topRight: Radius.circular(50)),
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomRight,
-                            end: Alignment.topCenter,
-                            colors: <Color>[green100, green300, green200]),
-                      ),
-                      //width: 16,
-                      height: double.infinity,
-                      child: Center(
-                          child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'الملاحظات السلوكية',
-                            style: TextStyle(fontSize: 16),
+            child: Stack(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: ListView.separated(
+                          physics: BouncingScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) =>
+                              catItemBuilder(context, index),
+                          itemCount: 40,
+                          separatorBuilder: (BuildContext context, int index) =>
+                              Container(
+                                height: 1,
+                                color: Colors.grey,
+                              )),
+                    ),
+                    Container(
+                      width: .3,
+                      color: const Color.fromARGB(255, 87, 60, 50),
+                    ),
+                    Expanded(
+                      child: ListView.separated(
+                          physics: BouncingScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) =>
+                              catItemBuilder(context, index),
+                          itemCount: 40,
+                          separatorBuilder: (BuildContext context, int index) =>
+                              Container(
+                                height: 1,
+                                color: Colors.grey,
+                              )),
+                    ),
+                  ],
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Expanded(
+                    child: AnimatedFold(
+                      positive: false,
+                      key: _foldingCellKey2,
+                      align: Alignment.centerRight,
+                      frontWidget: InkWell(
+                        onTap: () =>
+                            _foldingCellKey2.currentState?.toggleFold(),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: .5,
+                              color: const Color.fromARGB(255, 87, 60, 50),
+                            ),
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(50)),
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomRight,
+                                end: Alignment.topCenter,
+                                colors: <Color>[green100, green300, green200]),
                           ),
-                          Row(
+                          //width: 16,
+                          height: double.infinity,
+                          child: Center(
+                              child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SizedBox(
-                                width: 80,
+                              Text(
+                                'الملاحظات السلوكية',
+                                style: TextStyle(fontSize: 16),
                               ),
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.circle,
-                                    color:
-                                        const Color.fromARGB(255, 87, 60, 50),
-                                    size: 16,
-                                  )),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 80,
+                                  ),
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.circle,
+                                        color: const Color.fromARGB(
+                                            255, 87, 60, 50),
+                                        size: 16,
+                                      )),
+                                ],
+                              )
                             ],
-                          )
-                        ],
-                      )),
+                          )),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-              Expanded(
-                child: AnimatedFold(
-                  positive: true,
-                  align: Alignment.centerLeft,
-                  key: _foldingCellKey,
-                  frontWidget: InkWell(
-                    onTap: () => _foldingCellKey.currentState?.toggleFold(),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: .5,
-                          color: const Color.fromARGB(255, 87, 60, 50),
-                        ),
-                        borderRadius:
-                            BorderRadius.only(topLeft: Radius.circular(50)),
-                        gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: <Color>[green200, green300, green100]),
-                      ),
-                      //width: 160,
-                      height: double.infinity,
-                      child: Center(
-                          child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'الملاحظات الاجتهادية',
-                            style: TextStyle(fontSize: 16),
+                  Expanded(
+                    child: AnimatedFold(
+                      positive: true,
+                      align: Alignment.centerLeft,
+                      key: _foldingCellKey,
+                      frontWidget: InkWell(
+                        onTap: () => _foldingCellKey.currentState?.toggleFold(),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: .5,
+                              color: const Color.fromARGB(255, 87, 60, 50),
+                            ),
+                            borderRadius:
+                                BorderRadius.only(topLeft: Radius.circular(50)),
+                            gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: <Color>[green200, green300, green100]),
                           ),
-                          Row(
+                          //width: 160,
+                          height: double.infinity,
+                          child: Center(
+                              child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SizedBox(
-                                width: 25,
+                              Text(
+                                'الملاحظات الاجتهادية',
+                                style: TextStyle(fontSize: 16),
                               ),
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.circle,
-                                    color:
-                                        const Color.fromARGB(255, 87, 60, 50),
-                                    size: 16,
-                                  )),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 25,
+                                  ),
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.circle,
+                                        color: const Color.fromARGB(
+                                            255, 87, 60, 50),
+                                        size: 16,
+                                      )),
+                                ],
+                              )
                             ],
-                          )
-                        ],
-                      )),
+                          )),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-            ]),
+                ]),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
+}
+
+catItemBuilder(context, index) {
+  return InkWell(
+    onTap: () {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            var screenSize = MediaQuery.of(context).size;
+            return Dialog(
+              child: Container(
+                // width: screenSize.width * 0.7, // 80% of screen width
+
+                height: screenSize.height * .65, // 50% of screen height
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'الملاحظة 1 ',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: green400),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: green200),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'الالا تسايت عمعي قصسبي قلثل ثقفسل عغعتت هعغغث  نال  سبيلغا قث فثق بل ث ث ق ل ابي  يسليساا ا اا اانتنتنتنت اعلل يقبي اتا  ا نتا  نت انت  ت ن اسايت عمعي قصسبي قلثل ثقفسل عغعتت هعغغث  نال  سبيلغا قث فثق بل ث ث ق ل ابي  يسليساا ا اا اانتنتنتنت اعلل يقبي ا   ن اتن  انت ان تن اتن ات ا سيترت تنتا تاتابي اعي سعارهلات يعر اعقابتسي قابتيتب العهياتبل هعاقلايب هعالخيابل قالاي عاقلابي هايبلهتبيىت قلىيىبنتلى هتقلهتيب ختلهخبتي ',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                      ),
+                    ),
+                    defaultButton(
+                      text: 'إرسال',
+                      function: () {},
+                    )
+                  ],
+                ),
+              ),
+            );
+          });
+    },
+    child: Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Flexible(
+              child: Text(
+                'الملاحظة 1',
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+              ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.grey,
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
