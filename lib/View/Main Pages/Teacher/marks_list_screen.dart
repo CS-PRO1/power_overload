@@ -29,7 +29,7 @@ class MarksListScreen extends StatelessWidget {
               itemBuilder: (mark) => catItemBuilder(context, mark),
               filter: (value) => marks
                   .where(
-                    (element) => element['name'].toLowerCase().contains(value),
+                    (element) => element['name'].contains(value),
                   )
                   .toList(),
               emptyWidget: Center(
