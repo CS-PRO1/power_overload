@@ -8,7 +8,6 @@ import 'package:power_overload/View/Main%20Pages/Student/announcements_screen.da
 import 'package:power_overload/View/Main%20Pages/Student/complaints_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_details_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_screen.dart';
-import 'package:power_overload/View/Main%20Pages/Student/landing_screen.dart';
 import 'package:power_overload/Shared/constants.dart';
 import 'package:power_overload/View/Main%20Pages/Student/lesson_details_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/lessons_screen.dart';
@@ -45,7 +44,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      initialRoute: '/teacher/marks',
+      initialRoute: '/home',
       routes: {
         '/': (context) => LoginScreen(),
         //'/home': (context) => LandingScreen(),
