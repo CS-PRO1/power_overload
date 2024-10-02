@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:power_overload/Services/RBAC/role_based_widget.dart';
-import 'package:power_overload/Services/RBAC/role_enum.dart';
-import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:power_overload/Shared/components/default_button.dart';
+import 'package:power_overload/Shared/components/default_textfield.dart';
+import 'package:power_overload/Shared/components/float_button.dart';
 import 'package:power_overload/Shared/constants.dart';
 
 class ComplaintsScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class ComplaintsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: 'الشكاوى'),
+      appBar: customAppBar(title: 'الشكاوى'),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Stack(
@@ -31,7 +32,7 @@ class ComplaintsScreen extends StatelessWidget {
             Positioned(
               bottom: 20,
               right: 20,
-              child: MyFloatButton(
+              child: FloatButton(
                 icon: Icons.add_circle_outlined,
                 onTap: () {
                   showModalBottomSheet(
@@ -52,7 +53,7 @@ class ComplaintsScreen extends StatelessWidget {
                                 style: TextStyle(fontSize: 25),
                               ),
                               SizedBox(height: 20),
-                              myTextField(
+                              defaultTextField(
                                   newcomplaintcontroller, context, 'نص الشكوى',
                                   height: 6, maxLines: 6),
                               SizedBox(height: 20),

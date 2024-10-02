@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/Services/RBAC/role_based_widget.dart';
 import 'package:power_overload/Services/RBAC/role_enum.dart';
-import 'package:power_overload/Shared/animated_door.dart';
-import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/components/animated_door.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:power_overload/Shared/components/default_button.dart';
 import 'package:power_overload/Shared/constants.dart';
 
 class BehavioralNotes extends StatelessWidget {
@@ -15,7 +16,7 @@ class BehavioralNotes extends StatelessWidget {
     return WidgetWithRole(
       allowedRoles: [UserRole.parent],
       child: Scaffold(
-        appBar: MyAppBar(
+        appBar: customAppBar(
           title: ' الملاحظات',
           // actions: [AppBarPopupMenu()],
         ),

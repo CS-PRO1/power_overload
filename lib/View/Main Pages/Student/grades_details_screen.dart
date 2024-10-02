@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:power_overload/Shared/constants.dart';
 
 class GradesDetailsScreen extends StatelessWidget {
@@ -16,10 +16,9 @@ class GradesDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: green50,
-      appBar: MyAppBar(
+      appBar: customAppBar(
         title: 'العلامات',
-                  actions: [AppBarPopupMenu()],
-
+        actions: [AppBarPopupMenu()],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

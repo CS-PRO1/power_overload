@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:power_overload/Shared/constants.dart';
 import 'package:searchable_listview/searchable_listview.dart';
 
@@ -20,7 +20,7 @@ class MarksListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: MyAppBar(title: 'العلامات', actions: [AppBarPopupMenu()]),
+        appBar: customAppBar(title: 'العلامات', actions: [AppBarPopupMenu()]),
         body: Padding(
             padding: EdgeInsets.all(20.0),
             child: SearchableList(

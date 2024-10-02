@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:power_overload/Shared/components/default_button.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_details_screen.dart';
 //import 'package:power_overload/View/Main%20Pages/grades_details_screen.dart';
+// ignore: unused_import
 import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
-import 'package:flutter/cupertino.dart';
 
 class GradesScreen extends StatelessWidget {
   const GradesScreen({super.key});
@@ -11,7 +13,7 @@ class GradesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
+      appBar: customAppBar(
         title: 'العلامات',
         actions: [AppBarPopupMenu()],
       ),

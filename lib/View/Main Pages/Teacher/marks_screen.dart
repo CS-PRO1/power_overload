@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:power_overload/View/Main%20Pages/Student/grades_screen.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
 import 'package:power_overload/View/Main%20Pages/Teacher/marks_list_screen.dart';
@@ -10,7 +10,7 @@ class MarksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: 'الحصة الاولى', actions: [
+      appBar: customAppBar(title: 'الحصة الاولى', actions: [
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () {},

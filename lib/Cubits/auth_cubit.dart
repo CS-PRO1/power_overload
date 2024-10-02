@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:power_overload/Cubits/states.dart';
-import 'package:power_overload/Services/cache_helper.dart';
+import 'package:power_overload/Services/Cache/cache_helper.dart';
 
 class AuthCubit extends Cubit<AppStates> {
   AuthCubit() : super(AppInitState());

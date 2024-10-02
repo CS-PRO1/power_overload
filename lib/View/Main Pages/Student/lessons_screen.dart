@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/Services/RBAC/role_based_widget.dart';
 import 'package:power_overload/Services/RBAC/role_enum.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:power_overload/Shared/components/float_button.dart';
 import 'package:power_overload/View/Main%20Pages/Student/lesson_details_screen.dart';
 //import 'package:power_overload/View/Main%20Pages/lesson_details_screen.dart';
-import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/View/Main%20Pages/Teacher/add_lesson_screen.dart';
 
 class LessonsScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class LessonsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
+      appBar: customAppBar(
         title: 'حصص المادة',
         actions: [AppBarPopupMenu()],
       ),
@@ -37,7 +38,7 @@ class LessonsScreen extends StatelessWidget {
               child: Positioned(
                 bottom: 20,
                 right: 20,
-                child: MyFloatButton(
+                child: FloatButton(
                   icon: Icons.add,
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(

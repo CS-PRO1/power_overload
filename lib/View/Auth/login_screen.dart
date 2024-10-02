@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:power_overload/Cubits/auth_cubit.dart';
 import 'package:power_overload/Cubits/states.dart';
-import 'package:power_overload/View/Main%20Pages/Student/landing_screen.dart';
+import 'package:power_overload/Shared/components/default_button.dart';
+import 'package:power_overload/Shared/components/default_textfield.dart';
 //import 'package:power_overload/View/Main%20Pages/landing_screen.dart';
-import 'package:power_overload/Shared/components.dart';
 import 'package:power_overload/Shared/constants.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -59,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                                         horizontal: 10.0),
                                     child: Column(
                                       children: [
-                                        myTextField(
+                                        defaultTextField(
                                           firstnamecontroller,
                                           context,
                                           'الاسم الأول',
@@ -75,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        myTextField(
+                                        defaultTextField(
                                           fathernamecontroller,
                                           context,
                                           'اسم الأب',
@@ -91,7 +91,7 @@ class LoginScreen extends StatelessWidget {
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        myTextField(
+                                        defaultTextField(
                                           lastnamecontroller,
                                           context,
                                           'اسم العائلة',
@@ -107,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        myTextField(
+                                        defaultTextField(
                                           passwordcontroller,
                                           context,
                                           'كلمة السر',

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:power_overload/Shared/components/date_picker.dart';
+import 'package:power_overload/Shared/components/default_button.dart';
+import 'package:power_overload/Shared/components/default_textfield.dart';
 
 class AddLessonScreen extends StatelessWidget {
   AddLessonScreen({super.key});
@@ -9,7 +12,7 @@ class AddLessonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
+      appBar: customAppBar(
         title: 'اضافة حصة',
         actions: [
           AppBarPopupMenu(),
@@ -28,7 +31,7 @@ class AddLessonScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              myTextField(
+              defaultTextField(
                 lessonnumbercontroller,
                 context,
                 'الحصة',
@@ -43,7 +46,7 @@ class AddLessonScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              myTextField(
+              defaultTextField(
                 lessonnumbercontroller,
                 context,
                 'عنوان الحصة',
@@ -79,7 +82,7 @@ class AddLessonScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               SizedBox(height: 20),
-              myTextField(lessonideascontroller, context, '1.2.3....',
+              defaultTextField(lessonideascontroller, context, '1.2.3....',
                   height: 6, maxLines: 300),
               SizedBox(height: 50),
               defaultButton(

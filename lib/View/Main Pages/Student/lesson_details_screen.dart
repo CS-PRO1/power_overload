@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:power_overload/Services/RBAC/role_based_widget.dart';
 import 'package:power_overload/Services/RBAC/role_enum.dart';
-import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:power_overload/Shared/components/default_button.dart';
+import 'package:power_overload/Shared/components/default_textfield.dart';
+import 'package:power_overload/Shared/components/float_button.dart';
 import 'package:power_overload/Shared/constants.dart';
 //import 'package:readmore/readmore.dart';
 import 'package:readmore/readmore.dart';
@@ -15,7 +18,7 @@ class LessonDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: 'الحصة الاولى', actions: [
+      appBar: customAppBar(title: 'الحصة الاولى', actions: [
         IconButton(
           icon: Icon(Icons.file_open),
           onPressed: () {},
@@ -150,7 +153,7 @@ class LessonDetailsScreen extends StatelessWidget {
           Positioned(
             bottom: 20,
             right: 20,
-            child: MyFloatButton(
+            child: FloatButton(
               icon: Icons.add_comment_rounded,
               onTap: () {
                 showDialog(
@@ -171,8 +174,8 @@ class LessonDetailsScreen extends StatelessWidget {
                                   SizedBox(
                                     height: 5,
                                   ),
-                                  myTextField(_newcommentcontroller, context,
-                                      'نص التعليق',
+                                  defaultTextField(_newcommentcontroller,
+                                      context, 'نص التعليق',
                                       height: 4, maxLines: 5),
                                   SizedBox(
                                     height: 5,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:power_overload/Shared/components.dart';
+import 'package:power_overload/Shared/components/custom_appbar.dart';
 
 class SchedulesScreen extends StatelessWidget {
   SchedulesScreen({super.key});
@@ -8,7 +8,7 @@ class SchedulesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
+      appBar: customAppBar(
         title: 'البرامج',
         actions: [AppBarPopupMenu()],
       ),
