@@ -5,6 +5,7 @@ import 'package:power_overload/Shared/components/animated_door.dart';
 import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:power_overload/Shared/components/default_button.dart';
 import 'package:power_overload/Shared/constants.dart';
+import 'package:power_overload/View/Main%20Pages/Parent/behavioral_details_screan.dart';
 
 class BehavioralNotes extends StatelessWidget {
   BehavioralNotes({Key? key}) : super(key: key);
@@ -176,72 +177,17 @@ class BehavioralNotes extends StatelessWidget {
 catItemBuilder(context, index) {
   return InkWell(
     onTap: () {
-      showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            var screenSize = MediaQuery.of(context).size;
-            return Dialog(
-              child: Container(
-                // width: screenSize.width * 0.7, // 80% of screen width
-
-                height: screenSize.height * .65, // 50% of screen height
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      ' عدم الالتزام باللباس المدرسي',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: green400),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(color: green200),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'الالا تسايت عمعي قصسبي قلثل ثقفسل عغعتت هعغغث  نال  سبيلغا قث فثق بل ث ث ق ل ابي  يسليساا ا اا اانتنتنتنت اعلل يقبي اتا  ا نتا  نت انت  ت ن اسايت عمعي قصسبي قلثل ثقفسل عغعتت هعغغث  نال  سبيلغا قث فثق بل ث ث ق ل ابي  يسليساا ا اا اانتنتنتنت اعلل يقبي ا   ن اتن  انت ان تن اتن ات ا سيترت تنتا تاتابي اعي سعارهلات يعر اعقابتسي قابتيتب العهياتبل هعاقلايب هعالخيابل قالاي عاقلابي هايبلهتبيىت قلىيىبنتلى هتقلهتيب ختلهخبتي ',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      ),
-                    ),
-                    defaultButton(
-                      text: 'تم',
-                      function: () {
-                        Navigator.pop(context);
-                      },
-                    )
-                  ],
-                ),
-              ),
-            );
-          });
+      Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => BehavioralDetailsScrean()));
     },
     child: Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            // SizedBox(
-            //   width: 16,
-            // ),
-            Text(
-              ' عدم الالتزام باللباس المدرسي',
-              // overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-            ),
-            SizedBox(
-              height: 5,
-            ),
             Text(
               '2024/12/9',
               style: TextStyle(
@@ -249,6 +195,16 @@ catItemBuilder(context, index) {
                   fontSize: 10,
                   color: Colors.grey[600]),
             ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              ' عدم الالتزام باللباس المدرسي',
+              // overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+              textAlign: TextAlign.center,
+            ),
+
             // SizedBox(
             //   width: 16,
             // ),
