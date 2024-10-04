@@ -189,7 +189,7 @@ catItemBuilder(context, index) {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      'الملاحظة 1 ',
+                      ' عدم الالتزام باللباس المدرسي',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -212,7 +212,7 @@ catItemBuilder(context, index) {
                       ),
                     ),
                     defaultButton(
-                      text: 'إرسال',
+                      text: 'تم',
                       function: () {},
                     )
                   ],
@@ -225,21 +225,37 @@ catItemBuilder(context, index) {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Flexible(
-              child: Text(
-                'الملاحظة 1',
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+        child: Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // SizedBox(
+              //   width: 16,
+              // ),
+              Expanded(
+                child: Text(
+                  '2024/12/9',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w100,
+                      fontSize: 10,
+                      color: Colors.grey[600]),
+                ),
               ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.grey,
-            ),
-          ],
+              // SizedBox(
+              //   width: 16,
+              // ),
+              Expanded(
+                child: Flexible(
+                  child: Text(
+                    ' عدم الالتزام باللباس المدرسي',
+                    // overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     ),
