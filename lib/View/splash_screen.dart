@@ -2,6 +2,7 @@ import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart
 import 'package:flutter/material.dart';
 import 'package:power_overload/Shared/constants.dart';
 import 'package:power_overload/View/Auth/login_screen.dart';
+import 'package:power_overload/View/Main%20Pages/Parent/behavioral_notes.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -27,7 +28,7 @@ class SplashScreen extends StatelessWidget {
         end: Alignment.bottomRight,
         colors: [green400, green100, green500],
       ),
-      nextScreen: LoginScreen(),
+      nextScreen: BehavioralNotes(),
     );
   }
 }

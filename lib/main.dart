@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:power_overload/Services/Routes/routes.dart';
 import 'package:power_overload/Services/Cache/cache_helper.dart';
 import 'package:power_overload/Services/Dio/dio.dart';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:power_overload/Shared/constants.dart';
-import 'package:power_overload/View/Auth/login_screen.dart';
-import 'package:power_overload/View/Main%20Pages/Student/subjects_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

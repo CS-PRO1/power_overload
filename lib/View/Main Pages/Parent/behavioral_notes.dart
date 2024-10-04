@@ -14,7 +14,7 @@ class BehavioralNotes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WidgetWithRole(
-      allowedRoles: [UserRole.parent],
+      allowedRoles: [UserRole.parent, UserRole.superadmin],
       child: Scaffold(
         appBar: customAppBar(
           title: ' الملاحظات',
