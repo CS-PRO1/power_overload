@@ -213,7 +213,9 @@ catItemBuilder(context, index) {
                     ),
                     defaultButton(
                       text: 'تم',
-                      function: () {},
+                      function: () {
+                        Navigator.pop(context);
+                      },
                     )
                   ],
                 ),
@@ -225,37 +227,32 @@ catItemBuilder(context, index) {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // SizedBox(
-              //   width: 16,
-              // ),
-              Expanded(
-                child: Text(
-                  '2024/12/9',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w100,
-                      fontSize: 10,
-                      color: Colors.grey[600]),
-                ),
-              ),
-              // SizedBox(
-              //   width: 16,
-              // ),
-              Expanded(
-                child: Flexible(
-                  child: Text(
-                    ' عدم الالتزام باللباس المدرسي',
-                    // overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // SizedBox(
+            //   width: 16,
+            // ),
+            Text(
+              ' عدم الالتزام باللباس المدرسي',
+              // overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              '2024/12/9',
+              style: TextStyle(
+                  fontWeight: FontWeight.w100,
+                  fontSize: 10,
+                  color: Colors.grey[600]),
+            ),
+            // SizedBox(
+            //   width: 16,
+            // ),
+          ],
         ),
       ),
     ),
