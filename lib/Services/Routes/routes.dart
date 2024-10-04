@@ -20,6 +20,7 @@ Map<String, Widget Function(BuildContext)> getRoutes() {
     '/': (context) => SplashScreen(),
     '/login': (context) => LoginScreen(),
     '/home': (context) => LandingScreen(),
+    //'/home': (context) => BehavioralNotes(),
     '/subjects': (context) => SubjectsScreen(),
     '/schedules': (context) => SchedulesScreen(),
     '/lessons': (context) => LessonsScreen(),
