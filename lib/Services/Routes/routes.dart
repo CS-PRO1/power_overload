@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/View/Auth/login_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Parent/behavioral_notes.dart';
+import 'package:power_overload/View/Main%20Pages/Principal/add_behavioral_note.dart';
 import 'package:power_overload/View/Main%20Pages/Student/announcements_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/complaints_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_details_screen.dart';
@@ -31,6 +32,7 @@ Map<String, Widget Function(BuildContext)> getRoutes() {
     '/parent/behavioral_notes': (context) => BehavioralNotes(),
     '/teacher/marks': (context) => MarksScreen(),
     '/teacher/marks_list': (context) => MarksListScreen(),
-    '/teacher/add_lesson': (context) => AddLessonScreen()
+    '/teacher/add_lesson': (context) => AddLessonScreen(),
+    'principal/add_note': (context) => AddBehavioralNote()
   };
 }

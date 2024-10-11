@@ -5,6 +5,7 @@ Widget datePicker(BuildContext context) {
   DateTime _dateTime = DateTime.now();
   void _showDatePicker() {
     showDatePicker(
+      barrierColor: green400,
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2000),
@@ -17,7 +18,7 @@ Widget datePicker(BuildContext context) {
   return SizedBox(
     width: 200,
     child: Card(
-      color: bglight,
+      color: green100,
       elevation: 1,
       shape: LinearBorder.bottom(side: BorderSide(color: green400, width: 2)),
       child: InkWell(
