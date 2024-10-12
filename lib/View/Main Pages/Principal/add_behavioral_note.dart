@@ -1,14 +1,16 @@
 import 'package:choice/choice.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:power_overload/Shared/components/date_picker.dart';
 import 'package:power_overload/Shared/components/default_button.dart';
 import 'package:power_overload/Shared/components/default_textfield.dart';
 import 'package:power_overload/Shared/constants.dart';
+import 'package:power_overload/View/Main%20Pages/Student/subjects_screen.dart';
 
 class AddBehavioralNote extends StatelessWidget {
   AddBehavioralNote({super.key});
-  bool _isBehavioral = false;
+  ValueNotifier<bool> _isBehavioral = ValueNotifier<bool>(true);
 
   List choices = ['Behavioral', 'Educational'];
 
@@ -46,10 +48,10 @@ class AddBehavioralNote extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   child: InlineChoice<bool>.single(
-                      value: _isBehavioral,
+                      value: _isBehavioral.value,
                       onChanged: (value) {
                         value == null ? value = false : value = value;
-                        _isBehavioral = value;
+                        _isBehavioral.value = value;
                       },
                       clearable: false,
                       itemCount: choices.length,
@@ -59,7 +61,8 @@ class AddBehavioralNote extends StatelessWidget {
                               choices[i] == 'Behavioral' ? true : false),
                           onSelected: state.onSelected(
                               choices[i] == 'Behavioral' ? true : false),
-                          label: Text(choices[i]),
+                          label: Text(
+                              choices[i] == 'Behavioral' ? 'سلوكي' : 'اجتهادي'),
                         );
                       },
                       listBuilder: ChoiceList.createWrapped(
@@ -84,28 +87,35 @@ class AddBehavioralNote extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                !_isBehavioral
-                    ? Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Column(
-                          children: [
-                            defaultTextField(
-                                _teachernamecontroller, context, 'اسم المدرس'),
-                            SizedBox(height: 10),
-                            defaultTextField(
-                                _subjectnamecontroller, context, 'المادة'),
-                            SizedBox(height: 10),
-                            defaultTextField(
-                              _lessoncontroller,
-                              context,
-                              'رقم الحصة',
-                              keyboardType: TextInputType.numberWithOptions(),
+                AnimatedBuilder(
+                    animation: _isBehavioral,
+                    builder: (context, child) => _isBehavioral.value
+                        ? Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Column(
+                              children: [
+                                defaultTextField(_teachernamecontroller,
+                                    context, 'اسم المدرس'),
+                                SizedBox(height: 10),
+                                defaultTextField(
+                                    _subjectnamecontroller, context, 'المادة'),
+                                SizedBox(height: 10),
+                                defaultTextField(
+                                  _lessoncontroller,
+                                  context,
+                                  'رقم الحصة',
+                                  keyboardType:
+                                      TextInputType.numberWithOptions(),
+                                ),
+                                SizedBox(height: 10),
+                              ],
                             ),
-                            SizedBox(height: 10),
-                          ],
-                        ),
-                      )
-                    : Container(),
+                          )
+                            .animate()
+                            .slideY(begin: -.3)
+                            .fadeIn(duration: Duration(milliseconds: 500))
+                        : Container()),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
