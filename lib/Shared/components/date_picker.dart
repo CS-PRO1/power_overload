@@ -5,22 +5,25 @@ Widget datePicker(BuildContext context) {
   DateTime _dateTime = DateTime.now();
   void _showDatePicker() {
     showDatePicker(
-      barrierColor: green400,
+      //barrierColor: green400,
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2000),
       lastDate: DateTime(2050),
     ).then((value) {
-      _dateTime = value!;
+      value != null ? _dateTime = value : _dateTime = DateTime.now();
     });
   }
 
   return SizedBox(
     width: 200,
     child: Card(
+      clipBehavior: Clip.antiAlias,
       color: green100,
       elevation: 1,
-      shape: LinearBorder.bottom(side: BorderSide(color: green400, width: 2)),
+      shape: RoundedRectangleBorder(
+          side: BorderSide(color: green400, width: 2),
+          borderRadius: BorderRadius.circular(20)),
       child: InkWell(
         onTap: _showDatePicker,
         child: Padding(

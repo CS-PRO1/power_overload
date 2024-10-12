@@ -45,6 +45,7 @@ dependencies:
   searchable_listview:
   another_flutter_splash_screen: 
   page_transition:
+  image_picker:
 
   cupertino_icons: ^1.0.8
   flutter_localizations:

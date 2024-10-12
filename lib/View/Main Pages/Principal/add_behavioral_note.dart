@@ -1,18 +1,22 @@
+import 'dart:io';
+
 import 'package:choice/choice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:power_overload/Shared/components/date_picker.dart';
 import 'package:power_overload/Shared/components/default_button.dart';
 import 'package:power_overload/Shared/components/default_textfield.dart';
 import 'package:power_overload/Shared/constants.dart';
-import 'package:power_overload/View/Main%20Pages/Student/subjects_screen.dart';
 
 class AddBehavioralNote extends StatelessWidget {
   AddBehavioralNote({super.key});
   ValueNotifier<bool> _isBehavioral = ValueNotifier<bool>(true);
 
   List choices = ['Behavioral', 'Educational'];
+
+  List<File> images = [];
 
   TextEditingController _notetypecontroller = new TextEditingController();
   TextEditingController _rulingcontroller = new TextEditingController();
@@ -37,14 +41,6 @@ class AddBehavioralNote extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  'اختر نوع الملاحظة',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
                 Container(
                   width: double.infinity,
                   child: InlineChoice<bool>.single(
@@ -57,12 +53,15 @@ class AddBehavioralNote extends StatelessWidget {
                       itemCount: choices.length,
                       itemBuilder: (state, i) {
                         return ChoiceChip(
+                          selectedColor: green200,
+                          side: BorderSide(color: green300),
                           selected: state.selected(
                               choices[i] == 'Behavioral' ? true : false),
                           onSelected: state.onSelected(
                               choices[i] == 'Behavioral' ? true : false),
-                          label: Text(
-                              choices[i] == 'Behavioral' ? 'سلوكي' : 'اجتهادي'),
+                          label: Text(choices[i] == 'Behavioral'
+                              ? 'سلوكية'
+                              : 'اجتهادية'),
                         );
                       },
                       listBuilder: ChoiceList.createWrapped(
@@ -89,7 +88,7 @@ class AddBehavioralNote extends StatelessWidget {
                 ),
                 AnimatedBuilder(
                     animation: _isBehavioral,
-                    builder: (context, child) => _isBehavioral.value
+                    builder: (context, child) => !_isBehavioral.value
                         ? Padding(
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 20.0),
@@ -137,7 +136,13 @@ class AddBehavioralNote extends StatelessWidget {
                     InkWell(
                       splashColor: green100,
                       borderRadius: BorderRadius.circular(100.0),
-                      onTap: () {},
+                      onTap: () async {
+                        final pickedFile = await ImagePicker()
+                            .pickImage(source: ImageSource.gallery);
+                        if (pickedFile != null) {
+                          images.add(File(pickedFile.path));
+                        }
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
@@ -151,7 +156,7 @@ class AddBehavioralNote extends StatelessWidget {
                           ),
                           CircleAvatar(
                             radius: 25,
-                            child: Icon(Icons.camera_alt),
+                            child: Icon(Icons.image),
                             backgroundColor: green400,
                             foregroundColor: green100,
                           ),
