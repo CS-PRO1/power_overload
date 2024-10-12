@@ -84,24 +84,8 @@ class AddBehavioralNote extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                _isBehavioral
+                !_isBehavioral
                     ? Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Column(
-                          children: [
-                            defaultTextField(
-                                _notetypecontroller, context, 'نوع الملاحظة'),
-                            SizedBox(height: 10),
-                            defaultTextField(
-                                _rulingcontroller, context, 'العقوبة'),
-                            SizedBox(height: 10),
-                            defaultTextField(
-                                _summarycontroller, context, 'النتيجة'),
-                            SizedBox(height: 10),
-                          ],
-                        ),
-                      )
-                    : Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: Column(
                           children: [
@@ -120,7 +104,22 @@ class AddBehavioralNote extends StatelessWidget {
                             SizedBox(height: 10),
                           ],
                         ),
-                      ),
+                      )
+                    : Container(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    children: [
+                      defaultTextField(
+                          _notetypecontroller, context, 'نوع الملاحظة'),
+                      SizedBox(height: 10),
+                      defaultTextField(_rulingcontroller, context, 'العقوبة'),
+                      SizedBox(height: 10),
+                      defaultTextField(_summarycontroller, context, 'النتيجة'),
+                      SizedBox(height: 10),
+                    ],
+                  ),
+                ),
                 Column(
                   children: [
                     datePicker(context),
