@@ -7,6 +7,7 @@ import 'package:power_overload/View/Main%20Pages/Principal/add_announcement_scre
 import 'package:power_overload/View/Main%20Pages/Principal/add_behavioral_note.dart';
 import 'package:power_overload/View/Main%20Pages/Principal/attendance_check.dart';
 import 'package:power_overload/View/Main%20Pages/Principal/request_permission.dart';
+import 'package:power_overload/View/Main%20Pages/Student/complaints_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -32,7 +33,8 @@ class SplashScreen extends StatelessWidget {
         end: Alignment.bottomRight,
         colors: [green400, green100, green500],
       ),
-      nextScreen: AddAnnouncementScreen(),
+      nextScreen: ComplaintsScreen(),
+      //AddAnnouncementScreen(),
     );
   }
 }
