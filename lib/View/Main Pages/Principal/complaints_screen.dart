@@ -3,8 +3,8 @@ import 'package:power_overload/Shared/components/animated_door.dart';
 import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:power_overload/Shared/constants.dart';
 import 'package:power_overload/View/Main%20Pages/Parent/behavioral_details_screan.dart';
-class ComplaintsScreen extends StatelessWidget {
-   ComplaintsScreen({super.key});
+class ComplaintsScreen1 extends StatelessWidget {
+   ComplaintsScreen1({super.key});
 
   final _foldingCellKey = GlobalKey<AnimatedFoldState>();
   final _foldingCellKey2 = GlobalKey<AnimatedFoldState>();
@@ -84,7 +84,7 @@ class ComplaintsScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'الملاحظات السلوكية',
+                                'شكاوى ولي الأمر',
                                 style: TextStyle(fontSize: 16),
                               ),
                               Row(
@@ -135,7 +135,7 @@ class ComplaintsScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'الملاحظات الاجتهادية',
+                                'شكاوى الطالب',
                                 style: TextStyle(fontSize: 16),
                               ),
                               Row(
@@ -180,18 +180,12 @@ catItemBuilder(context, index) {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              '2024/12/9',
-              style: TextStyle(
-                  fontWeight: FontWeight.w100,
-                  fontSize: 10,
-                  color: Colors.grey[600]),
-            ),
+          
             SizedBox(
               height: 5,
             ),
             Text(
-              ' عدم الالتزام باللباس المدرسي',
+              'الاسم',
               // overflow: TextOverflow.ellipsis,
               style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
               textAlign: TextAlign.center,
