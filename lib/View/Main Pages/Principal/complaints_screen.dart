@@ -169,8 +169,8 @@ class ComplaintsScreen extends StatelessWidget {
 catItemBuilder(context, index) {
   return InkWell(
     onTap: () {
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => BehavioralDetailsScrean()));
+      // Navigator.of(context).push(
+      //     MaterialPageRoute(builder: (context) => BehavioralDetailsScrean()));
     },
     child: Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
