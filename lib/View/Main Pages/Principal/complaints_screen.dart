@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:power_overload/Shared/components/animated_door.dart';
 import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:power_overload/Shared/components/default_button.dart';
 import 'package:power_overload/Shared/constants.dart';
-import 'package:power_overload/View/Main%20Pages/Parent/behavioral_details_screan.dart';
 
 class ComplaintsScreen1 extends StatelessWidget {
   ComplaintsScreen1({super.key});
@@ -171,30 +171,77 @@ class ComplaintsScreen1 extends StatelessWidget {
 catItemBuilder(context, index) {
   return InkWell(
     onTap: () {
-      // Navigator.of(context).push(
-      //     MaterialPageRoute(builder: (context) => BehavioralDetailsScrean()));
+      showDialog(
+          context: context,
+          builder: (context) => Dialog(
+                child: Container(
+                  height: 350,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'تفاصيل الشكوى',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text('مقدم الشكوى: علتان العلتاني'),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text('تاريخ الشكوى: ' +
+                            DateTime.now().toString().substring(0, 11)),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text('الساعة: ' +
+                            DateTime.now().toString().substring(11, 16)),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text('محتوى الشكوى:'),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                            'البيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيب'),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        defaultButton(
+                            text: 'تم',
+                            function: () {
+                              Navigator.pop(context);
+                            })
+                      ],
+                    ),
+                  ),
+                ),
+              ));
     },
     child: Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SizedBox(
-              height: 5,
-            ),
             Text(
               'الاسم',
               // overflow: TextOverflow.ellipsis,
               style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
               textAlign: TextAlign.center,
             ),
-
-            // SizedBox(
-            //   width: 16,
-            // ),
+            SizedBox(
+              width: 10,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.grey,
+            ),
           ],
         ),
       ),
