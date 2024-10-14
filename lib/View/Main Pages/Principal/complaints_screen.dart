@@ -3,8 +3,9 @@ import 'package:power_overload/Shared/components/animated_door.dart';
 import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:power_overload/Shared/constants.dart';
 import 'package:power_overload/View/Main%20Pages/Parent/behavioral_details_screan.dart';
+
 class ComplaintsScreen1 extends StatelessWidget {
-   ComplaintsScreen1({super.key});
+  ComplaintsScreen1({super.key});
 
   final _foldingCellKey = GlobalKey<AnimatedFoldState>();
   final _foldingCellKey2 = GlobalKey<AnimatedFoldState>();
@@ -12,160 +13,161 @@ class ComplaintsScreen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: customAppBar(
-          title: ' الشكاوى',
-          // actions: [AppBarPopupMenu()],
-        ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
-          child: Container(
-            child: Stack(
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: ListView.separated(
-                          physics: BouncingScrollPhysics(),
-                          shrinkWrap: true,
-                          itemBuilder: (BuildContext context, int index) =>
-                              catItemBuilder(context, index),
-                          itemCount: 40,
-                          separatorBuilder: (BuildContext context, int index) =>
-                              Container(
-                                height: 1,
-                                color: Colors.grey,
-                              )),
+      appBar: customAppBar(
+        title: ' الشكاوى',
+        // actions: [AppBarPopupMenu()],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
+        child: Container(
+          child: Stack(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: ListView.separated(
+                        physics: BouncingScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) =>
+                            catItemBuilder(context, index),
+                        itemCount: 40,
+                        separatorBuilder: (BuildContext context, int index) =>
+                            Container(
+                              height: 1,
+                              color: Colors.grey,
+                            )),
+                  ),
+                  Container(
+                    width: .3,
+                    color: const Color.fromARGB(255, 87, 60, 50),
+                  ),
+                  Expanded(
+                    child: ListView.separated(
+                        physics: BouncingScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) =>
+                            catItemBuilder(context, index),
+                        itemCount: 40,
+                        separatorBuilder: (BuildContext context, int index) =>
+                            Container(
+                              height: 1,
+                              color: Colors.grey,
+                            )),
+                  ),
+                ],
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Expanded(
+                  child: AnimatedFold(
+                    positive: false,
+                    key: _foldingCellKey2,
+                    align: Alignment.centerRight,
+                    frontWidget: InkWell(
+                      onTap: () => _foldingCellKey2.currentState?.toggleFold(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: .5,
+                            color: const Color.fromARGB(255, 87, 60, 50),
+                          ),
+                          borderRadius:
+                              BorderRadius.only(topRight: Radius.circular(50)),
+                          gradient: LinearGradient(
+                              begin: Alignment.bottomRight,
+                              end: Alignment.topCenter,
+                              colors: <Color>[green100, green300, green200]),
+                        ),
+                        //width: 16,
+                        height: double.infinity,
+                        child: Center(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'شكاوى ولي الأمر',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: 80,
+                                ),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.circle,
+                                      color:
+                                          const Color.fromARGB(255, 87, 60, 50),
+                                      size: 16,
+                                    )),
+                              ],
+                            )
+                          ],
+                        )),
+                      ),
                     ),
-                    Container(
-                      width: .3,
-                      color: const Color.fromARGB(255, 87, 60, 50),
-                    ),
-                    Expanded(
-                      child: ListView.separated(
-                          physics: BouncingScrollPhysics(),
-                          shrinkWrap: true,
-                          itemBuilder: (BuildContext context, int index) =>
-                              catItemBuilder(context, index),
-                          itemCount: 40,
-                          separatorBuilder: (BuildContext context, int index) =>
-                              Container(
-                                height: 1,
-                                color: Colors.grey,
-                              )),
-                    ),
-                  ],
+                  ),
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Expanded(
-                    child: AnimatedFold(
-                      positive: false,
-                      key: _foldingCellKey2,
-                      align: Alignment.centerRight,
-                      frontWidget: InkWell(
-                        onTap: () =>
-                            _foldingCellKey2.currentState?.toggleFold(),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: .5,
-                              color: const Color.fromARGB(255, 87, 60, 50),
-                            ),
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(50)),
-                            gradient: LinearGradient(
-                                begin: Alignment.bottomRight,
-                                end: Alignment.topCenter,
-                                colors: <Color>[green100, green300, green200]),
+                Expanded(
+                  child: AnimatedFold(
+                    positive: true,
+                    align: Alignment.centerLeft,
+                    key: _foldingCellKey,
+                    frontWidget: InkWell(
+                      onTap: () => _foldingCellKey.currentState?.toggleFold(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: .5,
+                            color: const Color.fromARGB(255, 87, 60, 50),
                           ),
-                          //width: 16,
-                          height: double.infinity,
-                          child: Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'شكاوى ولي الأمر',
-                                style: TextStyle(fontSize: 16),
-                              ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: 80,
-                                  ),
-                                  IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.circle,
-                                        color: const Color.fromARGB(
-                                            255, 87, 60, 50),
-                                        size: 16,
-                                      )),
-                                ],
-                              )
-                            ],
-                          )),
+                          borderRadius:
+                              BorderRadius.only(topLeft: Radius.circular(50)),
+                          gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: <Color>[green200, green300, green100]),
                         ),
+                        //width: 160,
+                        height: double.infinity,
+                        child: Center(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'شكاوى الطالب',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: 25,
+                                ),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.circle,
+                                      color:
+                                          const Color.fromARGB(255, 87, 60, 50),
+                                      size: 16,
+                                    )),
+                              ],
+                            )
+                          ],
+                        )),
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: AnimatedFold(
-                      positive: true,
-                      align: Alignment.centerLeft,
-                      key: _foldingCellKey,
-                      frontWidget: InkWell(
-                        onTap: () => _foldingCellKey.currentState?.toggleFold(),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: .5,
-                              color: const Color.fromARGB(255, 87, 60, 50),
-                            ),
-                            borderRadius:
-                                BorderRadius.only(topLeft: Radius.circular(50)),
-                            gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: <Color>[green200, green300, green100]),
-                          ),
-                          //width: 160,
-                          height: double.infinity,
-                          child: Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'شكاوى الطالب',
-                                style: TextStyle(fontSize: 16),
-                              ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: 25,
-                                  ),
-                                  IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.circle,
-                                        color: const Color.fromARGB(
-                                            255, 87, 60, 50),
-                                        size: 16,
-                                      )),
-                                ],
-                              )
-                            ],
-                          )),
-                        ),
-                      ),
-                    ),
-                  ),
-                ]),
-              ],
-            ),
+                ),
+              ]),
+            ],
           ),
         ),
-      );  }
+      ),
+    );
+  }
 }
+
 catItemBuilder(context, index) {
   return InkWell(
     onTap: () {
@@ -180,7 +182,6 @@ catItemBuilder(context, index) {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-          
             SizedBox(
               height: 5,
             ),
