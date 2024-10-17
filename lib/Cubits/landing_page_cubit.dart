@@ -1,5 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:power_overload/Cubits/states.dart';
+import 'package:power_overload/View/Main%20Pages/Principal/add_behavioral_note.dart';
+import 'package:power_overload/View/Main%20Pages/Principal/attendance_check.dart';
+import 'package:power_overload/View/Main%20Pages/Principal/complaints_screen.dart';
+import 'package:power_overload/View/Main%20Pages/Principal/students_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/announcements_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/grades_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Student/schedules_screen.dart';
@@ -19,6 +23,13 @@ class LandingPageCubit extends Cubit<AppStates> {
     SchedulesScreen(),
     GradesScreen(),
     AnnouncementsScreen(),
+  ];
+
+  List screensP = [
+    StudentsScreen(),
+    AddBehavioralNote(),
+    AttendanceCheckScreen(),
+    ComplaintsScreen1(),
   ];
 
   changeNavBar(currentIndex) {

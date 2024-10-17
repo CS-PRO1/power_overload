@@ -34,7 +34,7 @@ class AddBehavioralNote extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(10.0),
           child: Container(
             width: double.infinity,
             child: Column(
