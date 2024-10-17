@@ -175,48 +175,74 @@ catItemBuilder(context, index) {
           context: context,
           builder: (context) => Dialog(
                 child: Container(
-                  height: 350,
                   child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'تفاصيل الشكوى',
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text('مقدم الشكوى: علتان العلتاني'),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text('تاريخ الشكوى: ' +
-                            DateTime.now().toString().substring(0, 11)),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text('الساعة: ' +
-                            DateTime.now().toString().substring(11, 16)),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text('محتوى الشكوى:'),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                            'البيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيب'),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        defaultButton(
-                            text: 'تم',
-                            function: () {
-                              Navigator.pop(context);
-                            })
-                      ],
+                    padding: const EdgeInsets.all(16.0),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'تفاصيل الشكوى',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          SingleChildScrollView(
+                            child: Container(
+                              padding: EdgeInsets.all(15),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                    width: 2,
+                                    color: green200,
+                                  )),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('مقدم الشكوى: علتان العلتاني'),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text('تاريخ الشكوى: ' +
+                                      DateTime.now()
+                                          .toString()
+                                          .substring(0, 11)),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text('الساعة: ' +
+                                      DateTime.now()
+                                          .toString()
+                                          .substring(11, 16)),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text('محتوى الشكوى:'),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                      'البيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيبالبيتزا عجينتها رقيقة كتير ومقرمدة وكتشبها قليل و فيها فليفلة خضرا كتير لو عم اكل سلطة على خبز يابس لسا اطيب'),
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          defaultButton(
+                              text: 'تم',
+                              function: () {
+                                Navigator.pop(context);
+                              })
+                        ],
+                      ),
                     ),
                   ),
                 ),
