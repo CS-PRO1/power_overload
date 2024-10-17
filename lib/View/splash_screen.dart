@@ -4,6 +4,7 @@ import 'package:power_overload/Shared/constants.dart';
 import 'package:power_overload/View/Auth/login_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Principal/complaints_screen.dart';
 import 'package:power_overload/View/Main%20Pages/Principal/student_profile_screen.dart';
+import 'package:power_overload/View/Main%20Pages/Principal/landing_screenp.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -29,7 +30,7 @@ class SplashScreen extends StatelessWidget {
         end: Alignment.bottomRight,
         colors: [green400, green100, green500],
       ),
-      nextScreen: StudentProfileScreen(),
+      nextScreen: LandingScreenP(),
       //AddAnnouncementScreen(),
     );
   }
