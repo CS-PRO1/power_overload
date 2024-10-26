@@ -1,5 +1,7 @@
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:power_overload/Shared/constants.dart';
 import 'package:searchable_listview/searchable_listview.dart';
@@ -41,10 +43,11 @@ class StudentsScreen extends StatelessWidget {
         // actions: [AppBarPopupMenu()],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 DropdownMenu(
                   dropdownMenuEntries: <DropdownMenuEntry<String>>[
@@ -133,22 +136,92 @@ class StudentsScreen extends StatelessWidget {
 }
 
 catItemBuilder(context, student) {
-  return Column(
-    children: [
-      Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+  return Card(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    child: ExpandablePanel(
+      header: Text(
+        student['name'],
+        textAlign: TextAlign.center,
+        textDirection: TextDirection.rtl,
+        style: TextStyle(fontSize: 20),
+      ),
+      collapsed: SizedBox(
+        height: 0,
+      ),
+      expanded: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(
+              border: Border.all(color: green150, width: 1),
+              borderRadius: BorderRadius.circular(10)),
+          width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: SizedBox(
-              width: 300,
-              child: Text(
-                student['name'],
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16,),textAlign: TextAlign.center,
-              ),
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    Icon(
+                      CupertinoIcons.person,
+                      color: green300,
+                    ),
+                    Text('الملف الشخصي')
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      CupertinoIcons.person_badge_minus,
+                      color: green300,
+                    ),
+                    Text('طلب إذن')
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      CupertinoIcons.person_badge_plus,
+                      color: green300,
+                    ),
+                    Text('ملاحظة خاصة')
+                  ],
+                ),
+              ],
             ),
-          ))
-    ],
+          ),
+        ),
+      ),
+      // tapHeaderToExpand: true,
+      // hasIcon: true,
+    ),
+    // ExpandablePanel(
+    //     collapsed: Padding(
+    //       padding: const EdgeInsets.all(15.0),
+    //       child: SizedBox(
+    //         width: 300,
+    //         child: Text(
+    //           student['name'],
+    //           overflow: TextOverflow.ellipsis,
+    //           style: TextStyle(
+    //             fontWeight: FontWeight.w700,
+    //             fontSize: 16,
+    //           ),
+    //           textAlign: TextAlign.center,
+    //         ),
+    //       ),
+    //     ),
+    //     expanded: Container(
+    //         width: double.infinity,
+    //         child: Row(children: [
+    //           InkWell(
+    //             child: Column(
+    //               children: [
+    //                 Icon(CupertinoIcons.person),
+    //                 Text('الملف الشخصي'),
+    //               ],
+    //             ),
+    //           ),
+    //         ])))
   );
 }
