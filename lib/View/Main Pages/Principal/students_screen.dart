@@ -4,6 +4,7 @@ import 'package:power_overload/Shared/components/custom_appbar.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:power_overload/Shared/constants.dart';
+import 'package:power_overload/View/Main%20Pages/Principal/student_profile_screen.dart';
 import 'package:searchable_listview/searchable_listview.dart';
 
 class StudentsScreen extends StatelessWidget {
@@ -160,14 +161,19 @@ catItemBuilder(context, student) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Column(
-                  children: [
-                    Icon(
-                      CupertinoIcons.person,
-                      color: green300,
-                    ),
-                    Text('الملف الشخصي')
-                  ],
+                InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => StudentProfileScreen(),
+                  )),
+                  child: Column(
+                    children: [
+                      Icon(
+                        CupertinoIcons.person,
+                        color: green300,
+                      ),
+                      Text('الملف الشخصي')
+                    ],
+                  ),
                 ),
                 Column(
                   children: [

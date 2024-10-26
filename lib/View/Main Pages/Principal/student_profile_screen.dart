@@ -3,7 +3,9 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:power_overload/Shared/components/custom_appbar.dart';
+import 'package:power_overload/Shared/components/float_button.dart';
 import 'package:power_overload/Shared/constants.dart';
+import 'package:power_overload/View/Main%20Pages/Principal/edit_special_notes_screen.dart';
 
 class StudentProfileScreen extends StatelessWidget {
   StudentProfileScreen({super.key});
@@ -85,76 +87,102 @@ class StudentProfileScreen extends StatelessWidget {
               },
               {
                 'cattitle': 'ملاحظات خاصة',
-                'catinfo:': {
+                'catinfo': {
                   'الحالة الاجتماعية': 'سليم',
                   'الحالة الصحية': 'سليم',
                   'الحالة المادية': 'متوسط',
                   'داعم للمدرسة': 'نعم',
                 }
-              }
+              },
             ];
-            return SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Center(
-                            child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      CircleAvatar(
-                                        radius: 80,
-                                        backgroundImage: NetworkImage(''),
-                                        onBackgroundImageError: (exception,
-                                                stackTrace) =>
-                                            Image.asset(
-                                                'assets/images/fallback/user_default.jpg'),
-                                      ),
-                                      SizedBox(height: 20),
-                                      ListView.separated(
-                                          physics: BouncingScrollPhysics(),
-                                          shrinkWrap: true,
-                                          itemBuilder: (context, index) => Card(
-                                                color: green100,
-                                                surfaceTintColor: green300,
-                                                shadowColor: green100,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10)),
-                                                child: Padding(
-                                                  padding: const EdgeInsets.all(
-                                                      16.0),
-                                                  child: ExpandablePanel(
-                                                      header: Text(
-                                                        _profileInfo[index]
-                                                            ['cattitle'],
-                                                        style: TextStyle(
-                                                            fontSize: 20),
+            return Stack(
+              children: [
+                Container(
+                  height: double.infinity,
+                  child: SingleChildScrollView(
+                      physics: BouncingScrollPhysics(),
+                      child: Padding(
+                          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(
+                                  child: Padding(
+                                      padding: const EdgeInsets.all(25.0),
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 80,
+                                              backgroundImage: AssetImage(
+                                                  'assets/images/fallback/user_default.jpg'),
+                                              onBackgroundImageError: (exception,
+                                                      stackTrace) =>
+                                                  Image.asset(
+                                                      'assets/images/fallback/user_default.jpg'),
+                                            ),
+                                            SizedBox(height: 20),
+                                            ListView.separated(
+                                                physics:
+                                                    BouncingScrollPhysics(),
+                                                shrinkWrap: true,
+                                                itemBuilder: (context, index) =>
+                                                    Card(
+                                                      color: green100,
+                                                      surfaceTintColor:
+                                                          green300,
+                                                      shadowColor: green100,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10)),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(16.0),
+                                                        child: ExpandablePanel(
+                                                            header: Text(
+                                                              _profileInfo[
+                                                                      index]
+                                                                  ['cattitle'],
+                                                              style: TextStyle(
+                                                                  fontSize: 20),
+                                                            ),
+                                                            collapsed:
+                                                                Container(),
+                                                            expanded: itemBuilder(
+                                                                _profileInfo[
+                                                                        index][
+                                                                    'catinfo'])),
                                                       ),
-                                                      collapsed: Container(),
-                                                      expanded: itemBuilder(
-                                                          _profileInfo[index]
-                                                              ['catinfo'])),
-                                                ),
-                                              ),
-                                          separatorBuilder: (context, index) =>
-                                              SizedBox(
-                                                height: 3,
-                                              ),
-                                          itemCount: _profileInfo.length),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                    ])),
-                          )
-                        ])));
+                                                    ),
+                                                separatorBuilder:
+                                                    (context, index) =>
+                                                        SizedBox(
+                                                          height: 3,
+                                                        ),
+                                                itemCount: _profileInfo.length),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                          ])),
+                                )
+                              ]))),
+                ),
+                Positioned(
+                    bottom: 20,
+                    right: 20,
+                    child: FloatButton(
+                      icon: Icons.edit_square,
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => EditSpecialNotesScreen())),
+                    ))
+              ],
+            );
           }),
     );
   }
