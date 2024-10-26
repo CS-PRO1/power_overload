@@ -41,6 +41,25 @@ Widget AppBarPopupMenu() {
           ]);
 }
 
+Widget AppBarPopupMenuPrincipal() {
+  return PopupMenuButton(
+      icon: const Icon(Icons.menu),
+      itemBuilder: (context) => [
+            menuItem(context,
+                icon: CupertinoIcons.chat_bubble_2,
+                text: 'دردشة',
+                onTap: () {}),
+            menuItem(context,
+                icon: CupertinoIcons.exclamationmark_circle,
+                text: 'الشكاوى',
+                onTap: () => Navigator.of(context).pushNamed('/complaints')),
+            menuItem(context,
+                icon: Icons.settings_outlined, text: 'الإعدادات', onTap: () {}),
+            menuItem(context,
+                icon: Icons.info_outline, text: 'حول', onTap: () {}),
+          ]);
+}
+
 PopupMenuItem menuItem(BuildContext context,
     {required IconData icon,
     required String text,

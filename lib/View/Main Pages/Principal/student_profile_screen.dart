@@ -83,6 +83,15 @@ class StudentProfileScreen extends StatelessWidget {
                   'رمز دخول ولي الأمر': '741852',
                 },
               },
+              {
+                'cattitle': 'ملاحظات خاصة',
+                'catinfo:': {
+                  'الحالة الاجتماعية': 'سليم',
+                  'الحالة الصحية': 'سليم',
+                  'الحالة المادية': 'متوسط',
+                  'داعم للمدرسة': 'نعم',
+                }
+              }
             ];
             return SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
